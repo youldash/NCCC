@@ -149,7 +149,21 @@ Once you complete the previous task, go right ahead and start implementing the [
 
 Note that [skeleton code](https://github.com/youldash/NCCC/blob/master/skeleton/) for the menu-based driver program is already implemented for convenience!
 
-The menu has the following options:
+The main-menu is consisted of the following options:
+
+```
+******************
+ NCCC Application 
+******************
+E) Export to a file
+A) Add a celestial object
+I) Import from a file
+S) Submenu
+D) Display collection
+Q) Quit
+******************
+Make your choice:
+```
 
 #### Task 3: Display Information on Screen 
 

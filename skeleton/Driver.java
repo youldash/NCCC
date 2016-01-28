@@ -265,7 +265,7 @@ public class Driver implements Menu {
 		System.out.println("D) Display collection");
 		System.out.println("Q) Quit");
 		System.out.println("******************");
-		System.out.print("Make your choice : ");
+		System.out.print("Make your choice: ");
 	}
 	
 	/**
@@ -328,7 +328,7 @@ public class Driver implements Menu {
 		System.out.println("R) Range: degrees");
 		System.out.println("E) Exit: submenu");
 		System.out.println("**********************");
-		System.out.print("Make your choice : ");
+		System.out.print("Make your choice: ");
 	}
 	
 	/**
