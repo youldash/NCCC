@@ -75,7 +75,7 @@ I
 ### Planets
 
 ![Screenshot](https://raw.github.com/youldash/NCCC/master/misc/earth-venus compare.png)
-Source: [Source](http://1.bp.blogspot.com/-anVyVsVGkHM/TZXqhxYCWJI/AAAAAAAAAXI/LlsFrBe2Bbc/s1600/earth-venus+compare.png)
+[Source](http://1.bp.blogspot.com/-anVyVsVGkHM/TZXqhxYCWJI/AAAAAAAAAXI/LlsFrBe2Bbc/s1600/earth-venus+compare.png)
 
 Information reported on <b>Planets</b> is stored in 6 lines. An entry might look like the following:
 
@@ -165,9 +165,31 @@ Q) Quit
 Make your choice:
 ```
 
+This menu is repeatedly displayed after each **case-sensitive** user selection is executed. If the user chooses ‘Q’ to quit, the program terminates.
+
+As the user selects "I" for example, the program is expected to prompt (or ask) her/him for the name of the text file containing the celestial objects (data set), and effectively load that information into the program's memory. If the file does not exist or there are other issues reading from the file, a warning message should be displayed to screen before the program continues by displaying the menu options.
+
 #### Task 3: Display Information on Screen 
 
-TBA.
+As the user selects "D" for example, the program is expected to display each celestial object's details to screen, formatted as follows for each type:
+
+```
+Star: Aldebaran A
+	radius = 25.00 solar radii
+	spectrum = K
+	brightness = III
+	distance = 65.00 ly
+Moon: Iapetus
+	radius = 735.60 km
+	mass = 1.81 X 10^21 kg
+	temp = 100 degrees K
+	satellite of Saturn
+Planet: Neptune
+	radius = 24764.00 km
+	mass = 1.02 X 10^26 kg
+	temp = 48 degrees K
+	orbital period = 60190.00 days
+```
 
 ## Sponsor
 This repository is sponsored in part by the Department of [Department of Computer Science](https://uqu.edu.sa/computer-sciences-information-en/) at Umm Al-Qura University, Mecca, Saudi Arabia.
