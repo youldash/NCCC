@@ -21,7 +21,9 @@ handling.
 
 ## Implementation
 
-You are to develop a program for certain Space Bodies, or rather, Celestial Objects (i.e. Stars, Planets and Moons)...
+Imagine yourself having to deal with many text file reports on certain Astronomical (or rather, Celestial Objects) observed and measured by a network of space stations. One way of solving this problem is to write an application, or rather, develop a project that is capable of combining and storing these reports and to query the system to find interesting facts about these objects of interest.
+
+You are to develop a Java program (using [NetBeans](https://netbeans.org/)) for certain Celestial Objects (i.e. Stars, Planets and Moons) for evaluation purposes.
 
 ### Task One
 
