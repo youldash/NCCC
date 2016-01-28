@@ -169,9 +169,9 @@ This menu is repeatedly displayed after each **case-sensitive** user selection i
 
 As the user selects "I" for example, the program is expected to prompt (or ask) her/him for the name of the text file containing the celestial objects (data set), and effectively load that information into the program's memory. If the file does not exist or there are other issues reading from the file, a warning message should be displayed to screen before the program continues by displaying the menu options.
 
-#### Task 3: Display Information on Screen 
+#### Task 3: Displaying Information
 
-As the user selects "D" for example, the program is expected to display each celestial object's details to screen, formatted as follows for each type:
+As the user selects "D" the program is expected to display each celestial object's details to screen, formatted as follows for each type:
 
 ```
 Star: Aldebaran A
@@ -190,6 +190,8 @@ Planet: Neptune
 	temp = 48 degrees K
 	orbital period = 60190.00 days
 ```
+
+Note that all real numbers are truncated (or output) to **2 decimal places**.
 
 ## Sponsor
 This repository is sponsored in part by the Department of [Department of Computer Science](https://uqu.edu.sa/computer-sciences-information-en/) at Umm Al-Qura University, Mecca, Saudi Arabia.
