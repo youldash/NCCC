@@ -42,6 +42,7 @@ I
 * Line 2 is the "name" of the star (hint: may be more than one word).
 * Line 3 is the "radius" of the star (in solar radius units where 1 solar radius ≈ 695,500km).
 * Line 4 is a "letter" (or character) representing the spectrum (i.e. color of the star). See below:
+
 | Letter | Description |
 |:--------------------:|:---------------------------:|
 | O | Blue |
