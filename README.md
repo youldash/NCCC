@@ -1,6 +1,6 @@
 # NCCC Training Material for UQU (CIS) Teams
 
-<img src="https://raw.github.com/youldash/NCCC/master/UQU-LOGO-1024x731.png" width="100%" />
+<img src="https://raw.github.com/youldash/NCCC/master/misc/UQU-LOGO-1024x731.png" width="100%" />
 
 Welcome to the NCCC training repository! This repository is dedicated to the CIS teams (both female and male students) whom will represent UQU at NCCC 2016. 
 
@@ -27,7 +27,7 @@ You are to develop a Java program (using [NetBeans](https://netbeans.org/)) for 
 
 ### Stars
 
-![Screenshot](https://raw.github.com/youldash/NCCC/master/FELNM.jpg)
+![Screenshot](https://raw.github.com/youldash/NCCC/master/misc/FELNM.jpg)
 
 <!-- http://i.imgur.com/FELNM.jpg -->
 
