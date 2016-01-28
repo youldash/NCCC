@@ -31,7 +31,7 @@
 /**
  * (NCCC skeleton code) package created using TextMate version 2.0 on a Mac OS X 10.10.5 system.
  */
-package nccc.skeleton;
+package skeleton;
 
 import java.lang.String;
 import java.util.NoSuchElementException;
