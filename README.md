@@ -74,6 +74,9 @@ I
 
 ### Planets
 
+![Screenshot](https://raw.github.com/youldash/NCCC/master/misc/earth-venus compare.png)
+Source: [http://i.imgur.com/FELNM.jpg](http://1.bp.blogspot.com/-anVyVsVGkHM/TZXqhxYCWJI/AAAAAAAAAXI/LlsFrBe2Bbc/s1600/earth-venus+compare.png)
+
 Information reported on <b>Planets</b> is stored in 6 lines. An entry might look like the following:
 
 ```
