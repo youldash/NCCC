@@ -193,6 +193,25 @@ Planet: Neptune
 
 Note that all real numbers are truncated (or output) to **2 decimal places**.
 
+#### Task 4: Adding Celestial Objects
+
+As the user selects "A" the program is expected to add a new celestial object (of course depending on its type e.g. Star, Planet, Moon, etc.).
+
+Based on each type the program is expect to prompt for the required (relevant) fields and add the celestial object to the collection.
+
+At this stage you may wish to avoid checking on whether each newly-added celestial object is already in the collection, nor do you need to check for invalid values entered by the user (this task is entirely up to you!).
+
+An example interaction based on choosing "Star" as the new entry is as follows:
+
+```
+Add a type [Star/Planet/Moon]? **Star**
+	Name [string]? **Bellatrix**
+	Radius [real, solar radius]? **5.7**
+	Spectrum [O/B/A/F/G/K/M]? **B**
+	Brightness [I/II/III/IV/V/VI/VII]? **III**
+	Distance [real, light years]? **240**
+```
+
 ## Sponsor
 This repository is sponsored in part by the Department of [Department of Computer Science](https://uqu.edu.sa/computer-sciences-information-en/) at Umm Al-Qura University, Mecca, Saudi Arabia.
 
