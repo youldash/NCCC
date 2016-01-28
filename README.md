@@ -135,9 +135,9 @@ planet).
 
 While implementing your code, you may assume that user input is always correct, and files are correctly formatted. In reality however, this is **NOT** always the case as typical data sets can be stored in more-complex forms. For such cases *exception handling* are indeed helpful.
 
-#### Task 1: Class Hierarchy
+#### Task 1: Project Structure
 
-Just before you even think of writing code, you should **ALWAYS** think and plan your design, carefully!
+Just before you even think of writing code, you should **ALWAYS** plan your design!
 
 Once you have made a decision on what classes your program should include, you can then implement a class hierarchy to represent the celestial objects in your project.
 
