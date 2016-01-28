@@ -53,7 +53,19 @@ I
 | M | Red |
 | O | Blue |
 
-* Line 5 represents the "luminosity" (or brightness) of the star. There are 7 possible values for this attribute (stored using Roman numerals made with uppercase letters <b>I</b> and <b>V</b>).
+* Line 5 represents the "luminosity" (or brightness) of the star. There are 7 possible values for this attribute, stored using Roman numerals made with uppercase letters <b>I</b> and <b>V</b>, as follows:
+
+| Numerals | Description |
+|:--------:|:-----------:|
+| I | Supergiant |
+| II | Bright giant |
+| III | Normal giant |
+| IV | Subgiant |
+| V | Dwarf |
+| VI | Subdwarf |
+| VII | White dwarf |
+
+
 
 ### Task One
 
