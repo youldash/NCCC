@@ -212,6 +212,24 @@ Add a type [Star/Planet/Moon]? Star
 	Distance [real, light years]? 240
 ```
 
+#### Task 5: Importing from, and Exporting to a Binary File
+
+This task implies that your program should have the ability to store the celestial objects collection in binary format **(between runs)** in a file called **data.bin**.
+
+##### Importing Data
+
+* When the program starts, it **must** check if data.bin exists or not.
+* If the binary file "does not" exist, the user should be informed and the program should begin with an empty collection.
+* If the binary file "does" exist it should be read in if possible, otherwise print a message to
+screen that there was a problem reading the file and begin the program with an empty
+collection.
+
+##### Exporting Data
+
+* When the user selects to quit the program, the collection should be written to the binary file **prior** termination.
+* If the binary file "does" exist it should be overwritten.
+* If there are problems exporting the collection, an error message should be output to the user before the program terminates.
+
 ## Sponsor
 This repository is sponsored in part by the Department of [Department of Computer Science](https://uqu.edu.sa/computer-sciences-information-en/) at Umm Al-Qura University, Mecca, Saudi Arabia.
 
