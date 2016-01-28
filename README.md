@@ -8,16 +8,28 @@ Welcome to the NCCC training repository! This repository is dedicated to the CIS
 
 TBA.
 
+### Task One
+
+TBA.
+
+### Task Two
+
+TBA.
+
+### Task Three
+
+TBA.
+
 ## Usage
 
 TBA.
 
-## Sponsors
+## Sponsor
 This repository is sponsored in part by the Department of [Department of Computer Science](https://uqu.edu.sa/computer-sciences-information-en/) at Umm Al-Qura University, Mecca, Saudi Arabia.
 
 ## License
 
-This Git repository is made available under the MIT license.
+This Git repository is published under the MIT license.
 
 Redistribution and use in source and binary forms, with or without
 modification, are permitted provided that the following conditions are met:
