@@ -323,10 +323,10 @@ public class Driver implements Menu {
 		System.out.println();
 		System.out.println("****** SUBMENU *******");
 		System.out.println("F) Furthest: Star");
-		System.out.println("L) Largest: bodies");
+		System.out.println("L) Largest: Celestial Object");
 		System.out.println("A) All Moons: Planet");
-		System.out.println("R) Range: degrees");
-		System.out.println("E) Exit: submenu");
+		System.out.println("R) Range: Degrees");
+		System.out.println("E) Exit: Submenu");
 		System.out.println("**********************");
 		System.out.print("Make your choice: ");
 	}

@@ -214,7 +214,7 @@ Add a type [Star/Planet/Moon]? Star
 
 #### Task 5: Importing from, and Exporting to a Binary File
 
-This task implies that your program should have the ability to store the celestial objects collection in binary format **(between runs)** in a file called **data.bin**.
+This task implies that your program should have the ability to store the celestial objects collection in binary format **(between runs)** in a file called **"data.bin"**.
 
 ##### Importing Data
 
@@ -229,6 +229,91 @@ collection.
 * When the user selects to quit the program, the collection should be written to the binary file **prior** termination.
 * If the binary file "does" exist it should be overwritten.
 * If there are problems exporting the collection, an error message should be output to the user before the program terminates.
+
+#### Task 6: Enquiry Submenu
+
+As the user selects "S" the program is expected to display a submenu, as follows:
+
+```
+****** SUBMENU *******
+F) Furthest: Star
+L) Largest: Celestial Object
+A) All Moons: Planet
+R) Range: Degrees
+E) Exit: Submenu
+**********************
+Make your choice:
+```
+
+##### Option F: Furthest Star
+
+* Output to screen all the details of the Star that is furthest away.
+* You may assume there are no ties.
+
+##### Option L: Largest Celestial Object
+
+Output to screen all the details of the:
+
+* Biggest star.
+* Biggest planet.
+* Biggest moon.
+
+This task is determined by the radius. 
+
+Output a message if there are no space bodies of a particular type.
+
+Also assume there are no ties.
+
+##### Option A: All Moons of a Planet
+
+Ask the user for the name of a planet, and then search the collection and output to screen the name of all moons in the collection orbiting a planet of that name.
+
+##### Option R: Temperature Ranges 
+
+Ask the user to enter "minimum" and "maximum" temperature values (integers, degrees K) and then output to screen the "type", "name" and "temperature" of all (non-Star) celestial objects with temperatures within that (inclusive) range.
+
+Consider this example layout:
+
+```
+Minimum temperature [int, degrees K]? 60
+Maximum temperature [int, degrees K]? 130
+List of celestial objects within range:
+	Planet: Jupiter 120 K
+	Moon: Europa 103 K
+	Planet: Saturn 88 K
+	Moon: Ganymede 110 K
+	Moon: Io 130 K
+	Moon: Titan 94 K
+	Moon: Rhea 76 K
+	Moon: Titania 60 K
+	Moon: Oberon 61 K
+	Moon: Iapetus 100 K
+```
+
+#### Task 7: Writing/Exporting to Text Files
+
+As the user selects "E" the program is expected to write (or export) the current data collection in memory to a file named **"out.txt"**.
+
+While exporting to file, your program should produce a readable list of all celestial objects (in any order) that shows their name and their type (in brackets).
+
+An output format "example" is shown as follows (for a small sample collection):
+
+```
+Triton (Moon)
+Rhea (Moon)
+Titania (Moon)
+Oberon (Moon)
+Proxima Centauri (Star)
+Alpha Centauri A (Star)
+Alpha Centauri B (Star)
+Wolf 359 (Star)
+Sirius A (Star)
+Epsilon Eridani (Star)
+Neptune (Planet)
+```
+
+* If the text file "does" exist it should be overwritten.
+* If the write cannot occur, output an error message to screen.
 
 ## Sponsor
 This repository is sponsored in part by the Department of [Department of Computer Science](https://uqu.edu.sa/computer-sciences-information-en/) at Umm Al-Qura University, Mecca, Saudi Arabia.
