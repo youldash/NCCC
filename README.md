@@ -8,6 +8,17 @@ Welcome to the NCCC training repository! This repository is dedicated to the CIS
 
 The repository is consisted of a Java project, which can be implemented (and solved) over several tasks. Each task can be either achieved on an individual basis, or by working as a group or a team (which is highly recommended).
 
+The general aims are:
+
+* To analyze a problem in an Object-Oriented manner, and then design and implement an Object-Oriented solution that conforms to given specifications.
+* To practice file IO (input and output) in Java.
+* To practice using abstraction and inheritance in Java.
+* To practice using serialization in Java.
+* To make implementations more robust through mechanisms such as exception
+handling.
+
+**Proposed solutions will be posted later, for reference.**
+
 ## Usage
 
 TBA.
