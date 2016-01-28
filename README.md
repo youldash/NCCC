@@ -53,6 +53,8 @@ I
 | M | Red |
 | O | Blue |
 
+* Line 5 represents the "luminosity" (or brightness) of the star. There are 7 possible values for this attribute (stored using Roman numerals made with uppercase letters <b>I</b> and <b>V</b>).
+
 ### Task One
 
 TBA.
