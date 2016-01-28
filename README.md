@@ -93,7 +93,35 @@ number or double), and <b>exponent</b> (an integer) of the planet's mass express
 | Venus | 4.8685 24 | For the planet Venus, its mass is 4.8685 x 10^24kg |
 
 * Line 5 is the "orbital period" of the planet in days (measuring how long it takes to orbit their parent star).
+* Line 6 is the "temperature" of the planet in degrees Kelvin (stored as an integer).
 
+<hr>
+
+### Moons
+
+Information reported on <b>Moons</b> is stored in 6 lines. An entry might look like the following:
+
+```
+Moon
+Europa
+1569
+4.80 22
+Jupiter
+103
+```
+
+* Line 1 is the "type" of the celestial object (in this instance, a Moon).
+* Line 2 is the "name" of the moon (hint: may be more than one word).
+* Line 3 is the "radius" of the moon (in kilometers).
+* Line 4 is the "mass" of the moon (in kilometers). This attribute contains the <b>mantissa</b>, and <b>exponent</b> of the moon's mass expressed in scientific notation. See the following description for Europa:
+
+| Name | Mass | Description |
+|:----:|:----:|:----:|
+| Europa | 4.80 22 | For the moon Europa, its mass is 4.80 x 10^22kg |
+
+* Line 5 is the "name" of the planet that the moon orbits (in other words, the moon is a satellite of this
+planet).
+* Line 6 is the "temperature" of the moon in degrees Kelvin (stored as an integer).
 
 <hr>
 
