@@ -19,7 +19,7 @@ handling.
 
 **Proposed solutions will be posted later, for reference.**
 
-## Usage
+## Implementation
 
 You are to develop a program for certain Space Bodies, or rather, Celestial Objects (i.e. Stars, Planets and Moons)...
 
