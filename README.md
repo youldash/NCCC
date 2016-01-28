@@ -65,17 +65,31 @@ I
 | VI | Subdwarf |
 | VII | White dwarf |
 
+* Line 6 is "how far away" the star is (measured in light years).
 
+### Planets
 
-### Task One
+Information reported on <b>Planets</b> is stored in 6 lines. Typical entries look like the following:
+
+```
+Planet
+Venus
+6051
+4.8685 24
+224.70069 
+735
+```
+<hr>
+
+#### Task One
 
 TBA.
 
-### Task Two
+#### Task Two
 
 TBA.
 
-### Task Three
+#### Task Three
 
 TBA.
 
