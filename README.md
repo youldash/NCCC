@@ -2,7 +2,7 @@
 
 <img src="https://raw.github.com/youldash/NCCC/master/UQU-LOGO-1024x731.png" width="100%" />
 
-Welcome to the NCCC training repository! This repository is dedicated to the CIS teams (both female and male students) whom will represent UQU at this year's NCCC competition. 
+Welcome to the NCCC training repository! This repository is dedicated to the CIS teams (both female and male students) whom will represent UQU at NCCC 2016. 
 
 ## Description
 
