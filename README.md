@@ -28,7 +28,7 @@ You are to develop a Java program (using [NetBeans](https://netbeans.org/)) for 
 ### Stars
 
 ![Screenshot](https://raw.github.com/youldash/NCCC/master/misc/FELNM.jpg)
-Source: [http://i.imgur.com/FELNM.jpg](http://i.imgur.com/FELNM.jpg)
+[Source](http://i.imgur.com/FELNM.jpg)
 
 Information reported on <b>Stars</b> is stored in 6 lines. For example, a typical entry (record) looks like the following:
 
@@ -75,7 +75,7 @@ I
 ### Planets
 
 ![Screenshot](https://raw.github.com/youldash/NCCC/master/misc/earth-venus compare.png)
-Source: [http://i.imgur.com/FELNM.jpg](http://1.bp.blogspot.com/-anVyVsVGkHM/TZXqhxYCWJI/AAAAAAAAAXI/LlsFrBe2Bbc/s1600/earth-venus+compare.png)
+Source: [Source](http://1.bp.blogspot.com/-anVyVsVGkHM/TZXqhxYCWJI/AAAAAAAAAXI/LlsFrBe2Bbc/s1600/earth-venus+compare.png)
 
 Information reported on <b>Planets</b> is stored in 6 lines. An entry might look like the following:
 
