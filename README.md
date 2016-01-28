@@ -133,9 +133,15 @@ planet).
 
 ### Objectives
 
-#### Task 1
+While implementing your code, you may assume that user input is always correct, and files are correctly formatted. In reality however, this is **NOT** always the case as typical data sets can be stored in more-complex forms. For such cases *exception handling* are indeed helpful.
 
-TBA.
+#### Task 1: Class Hierarchy
+
+Just before you even think of writing code, you should **ALWAYS** think and plan your design, carefully!
+
+Once you have made a decision on what classes your program should include, you can then implement a class hierarchy to represent the celestial objects in your project.
+
+As you complete the following tasks, which may require adding certain behaviors (i.e. Java methods) to your classes, consider whether any methods or classes should be abstract, or interface. See the [Menu](https://github.com/youldash/NCCC/blob/master/skeleton/Menu.java) and [CelestialObject](https://github.com/youldash/NCCC/blob/master/skeleton/CelestialObject.java) classes for illustrations.
 
 #### Task 2
 
