@@ -21,7 +21,7 @@ handling.
 
 ## Usage
 
-You are to develop a program for certain space bodies, or rather, celestial objects (i.e. Stars, Planets and Moons)...
+You are to develop a program for certain Space Bodies, or rather, Celestial Objects (i.e. Stars, Planets and Moons)...
 
 ### Task One
 
