@@ -27,7 +27,7 @@ You are to develop a Java program (using [NetBeans](https://netbeans.org/)) for 
 
 ### Stars
 
-![Screenshot](https://raw.github.com/youldash/NCCC/master/UQU-LOGO-1024x731.png)
+![Screenshot](https://raw.github.com/youldash/NCCC/master/FELNM.jpg)
 
 <!-- http://i.imgur.com/FELNM.jpg -->
 
