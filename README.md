@@ -27,6 +27,10 @@ You are to develop a Java program (using [NetBeans](https://netbeans.org/)) for 
 
 ### Stars
 
+![Screenshot](https://raw.github.com/youldash/NCCC/master/UQU-LOGO-1024x731.png)
+
+<!-- http://i.imgur.com/FELNM.jpg -->
+
 Information reported on <b>Stars</b> is stored in 6 lines. For example, a typical entry (record) looks like the following:
 
 ```
