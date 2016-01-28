@@ -6,7 +6,7 @@ Welcome to the NCCC training repository! This repository is dedicated to the CIS
 
 ## Description
 
-TBA.
+The repository is consisted of a Java project, which can be implemented (and solved) over several tasks. Each task can be either achieved on an individual basis, or by working as a group or a team (which is highly recommended).
 
 ## Usage
 
