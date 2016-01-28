@@ -44,7 +44,13 @@ I
 * Line 4 is a "letter" (or character) representing the spectrum (i.e. color of the star). See below:
 
 | Letter | Description |
-|:--------------------:|:---------------------------:|
+|:------:|:-----------:|
+| A | White |
+| B | Blue-White |
+| F | White-Yellow |
+| G | Yellow |
+| K | Orange |
+| M | Red |
 | O | Blue |
 
 ### Task One
