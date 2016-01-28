@@ -67,9 +67,11 @@ I
 
 * Line 6 is "how far away" the star is (measured in light years).
 
+<hr>
+
 ### Planets
 
-Information reported on <b>Planets</b> is stored in 6 lines. Typical entries look like the following:
+Information reported on <b>Planets</b> is stored in 6 lines. An entry might look like the following:
 
 ```
 Planet
@@ -79,17 +81,33 @@ Venus
 224.70069 
 735
 ```
+
+* Line 1 is the "type" of the celestial object (in this instance, a Planet).
+* Line 2 is the "name" of the planet (hint: may be more than one word).
+* Line 3 is the "radius" of the planet (in kilometers).
+* Line 4 is the "mass" of the planet (in kilometers). This attribute contains the <b>mantissa</b> (a real
+number or double), and <b>exponent</b> (an integer) of the planet's mass expressed in scientific notation. See the following description for Venus:
+
+| Name | Mass | Description |
+|:----:|:----:|:----:|
+| Venus | 4.8685 24 | For the planet Venus, its mass is 4.8685 x 10^24kg |
+
+* Line 5 is the "orbital period" of the planet in days (measuring how long it takes to orbit their parent star).
+
+
 <hr>
 
-#### Task One
+### Objectives
+
+#### Task 1
 
 TBA.
 
-#### Task Two
+#### Task 2
 
 TBA.
 
-#### Task Three
+#### Task 3
 
 TBA.
 
