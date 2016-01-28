@@ -8,6 +8,10 @@ Welcome to the NCCC training repository! This repository is dedicated to the CIS
 
 TBA.
 
+## Usage
+
+TBA.
+
 ### Task One
 
 TBA.
@@ -17,10 +21,6 @@ TBA.
 TBA.
 
 ### Task Three
-
-TBA.
-
-## Usage
 
 TBA.
 
