@@ -303,7 +303,7 @@ public class Driver implements Menu {
 					break;
 					
 				case 'E':
-					System.out.println("Exiting... up...");
+					System.out.println("Finishing up...");
 					break;
 					
 				default:
@@ -328,7 +328,7 @@ public class Driver implements Menu {
 		System.out.println("R) Range: degrees");
 		System.out.println("E) Exit: submenu");
 		System.out.println("**********************");
-		System.out.print("Please select: ");
+		System.out.print("Make your choice : ");
 	}
 	
 	/**

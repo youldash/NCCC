@@ -143,11 +143,15 @@ Once you have made a decision on what classes your program should include, you c
 
 As you complete the following tasks, which may require adding certain behaviors (i.e. Java methods) to your classes, consider whether any methods or classes should be abstract, or interface. See the [Menu](https://github.com/youldash/NCCC/blob/master/skeleton/Menu.java) and [CelestialObject](https://github.com/youldash/NCCC/blob/master/skeleton/CelestialObject.java) classes for illustrations.
 
-#### Task 2
+#### Task 2: Driver Implementation
 
-TBA.
+Once you complete the previous task, go right ahead and start implementing the [Driver](https://github.com/youldash/NCCC/blob/master/skeleton/Driver.java) class (which typically loads the data from text files). This class is menu-based, as it is designed to manage the information in the collection of celestial objects (which are fed into the program from file).
 
-#### Task 3
+Note that [skeleton code](https://github.com/youldash/NCCC/blob/master/skeleton/) for the menu-based driver program is already implemented for convenience!
+
+The menu has the following options:
+
+#### Task 3: Display Information on Screen 
 
 TBA.
 
