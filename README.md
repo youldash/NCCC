@@ -21,13 +21,13 @@ handling.
 
 ## Implementation
 
-Imagine yourself having to deal with many text file reports on certain Astronomical (or rather, Celestial Objects) observed and measured by a network of space stations. One way of solving this problem is to write an application, or rather, develop a project that is capable of combining and storing these reports and to query the system to find interesting facts about these objects of interest.
+Imagine yourself having to deal with many text file reports on certain Astronomical (or rather, Celestial Objects) observed and measured by a network of space stations. One way of solving this problem is to design, and develop an application that is capable of combining and storing these reports and to query the system to find interesting facts about these objects of interest.
 
 You are to develop a Java program (using [NetBeans](https://netbeans.org/)) for certain Celestial Objects (i.e. Stars, Planets and Moons). This program can then be used for evaluation purposes.
 
 ### Stars
 
-Information reported on **Stars** is stored in 6 lines. For example, a typical entry (record) looks like the following:
+Information reported on <b>Stars</b> is stored in 6 lines. For example, a typical entry (record) looks like the following:
 
 ```
 Star
@@ -41,7 +41,10 @@ I
 * Line 1 is the "type" of the celestial object (in this case, Star).
 * Line 2 is the "name" of the star (hint: may be more than one word).
 * Line 3 is the "radius" of the star (in solar radius units where 1 solar radius ≈ 695,500km).
-* Line 4 is a "letter" (or character) representing the spectrum (i.e. color of the star).
+* Line 4 is a "letter" (or character) representing the spectrum (i.e. color of the star). See below:
+| Letter | Description |
+|:--------------------:|:---------------------------:|
+| O | Blue |
 
 ### Task One
 
