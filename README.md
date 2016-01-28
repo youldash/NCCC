@@ -290,7 +290,13 @@ List of celestial objects within range:
 	Moon: Iapetus 100 K
 ```
 
-#### Task 7: Writing/Exporting to Text Files
+#### Task 7: Reading/Importing from Text Files
+
+As the user selects "R" the program is expected to read (or import) the data collection from a file named **"in.txt"**.
+
+A sample input file is listed as [in.txt](https://github.com/youldash/NCCC/blob/master/skeleton/in.txt).
+
+#### Task 8: Writing/Exporting to Text Files
 
 As the user selects "E" the program is expected to write (or export) the current data collection in memory to a file named **"out.txt"**.
 
