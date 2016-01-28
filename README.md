@@ -23,7 +23,20 @@ handling.
 
 Imagine yourself having to deal with many text file reports on certain Astronomical (or rather, Celestial Objects) observed and measured by a network of space stations. One way of solving this problem is to write an application, or rather, develop a project that is capable of combining and storing these reports and to query the system to find interesting facts about these objects of interest.
 
-You are to develop a Java program (using [NetBeans](https://netbeans.org/)) for certain Celestial Objects (i.e. Stars, Planets and Moons) for evaluation purposes.
+You are to develop a Java program (using [NetBeans](https://netbeans.org/)) for certain Celestial Objects (i.e. Stars, Planets and Moons). This program can then be used for evaluation purposes.
+
+### Stars
+
+Information reported on **Stars** is stored in 6 lines. For example, a typical entry (record) looks like the following:
+
+```
+Star
+Betelgeuse
+1180 
+M 
+I
+430
+```
 
 ### Task One
 
