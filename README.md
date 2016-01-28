@@ -204,12 +204,12 @@ At this stage you may wish to avoid checking on whether each newly-added celesti
 An example interaction based on choosing "Star" as the new entry is as follows:
 
 ```
-Add a type [Star/Planet/Moon]? **Star**
-	Name [string]? **Bellatrix**
-	Radius [real, solar radius]? **5.7**
-	Spectrum [O/B/A/F/G/K/M]? **B**
-	Brightness [I/II/III/IV/V/VI/VII]? **III**
-	Distance [real, light years]? **240**
+Add a type [Star/Planet/Moon]? Star
+	Name [string]? Bellatrix
+	Radius [real, solar radius]? 5.7
+	Spectrum [O/B/A/F/G/K/M]? B
+	Brightness [I/II/III/IV/V/VI/VII]? III
+	Distance [real, light years]? 240
 ```
 
 ## Sponsor
