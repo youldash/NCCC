@@ -17,7 +17,7 @@ The general aims are:
 * To make implementations more robust through mechanisms such as exception
 handling.
 
-**Proposed solutions will be posted later, for reference.**
+**A proposed [solution](https://github.com/youldash/NCCC/blob/master/solution/) will be posted later, for reference.**
 
 ## Implementation
 
@@ -321,7 +321,11 @@ Neptune (Planet)
 * If the text file "does" exist it should be overwritten.
 * If the write cannot occur, output an error message to screen.
 
-## Sponsor
+## Bonus Tasks
+
+Coming soon...
+
+## Sponsors
 This repository is sponsored in part by the Department of [Department of Computer Science](https://uqu.edu.sa/computer-sciences-information-en/) at Umm Al-Qura University, Mecca, Saudi Arabia.
 
 ## License
