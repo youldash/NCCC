@@ -44,9 +44,9 @@ public interface Menu {
 	/* Application main menu. */
 	public void mainMenu();
 
-	/* Run sub-menu. */
+	/* Run submenu. */
 	public void runSubMenu();
 	
-	/* Sub-menu. */
+	/* Submenu. */
 	public void subMenu();
 }

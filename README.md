@@ -12,10 +12,10 @@ The general aims are:
 
 * To analyze a problem in an Object-Oriented manner, and then design and implement an Object-Oriented solution that conforms to given specifications.
 * To practice file IO (input and output) in Java.
-* To practice using abstraction and inheritance in Java.
-* To practice using serialization in Java.
-* To make implementations more robust through mechanisms such as exception
-handling.
+* To practice using Abstraction and Inheritance in Java.
+* To practice using Object Serialization in Java.
+* To make implementations more robust through mechanisms such as Exception
+Handling in Java.
 
 **A proposed [solution](https://github.com/youldash/NCCC/blob/master/solution/) will be posted later, for reference.**
 
@@ -152,16 +152,16 @@ Note that [skeleton code](https://github.com/youldash/NCCC/blob/master/skeleton/
 The main-menu is consisted of the following options:
 
 ```
-******************
+*************************
  NCCC Application 
-******************
-E) Export to a file
+*************************
+E) Export to file
 A) Add a celestial object
-I) Import from a file
+I) Import from file
 S) Submenu
 D) Display collection
 Q) Quit
-******************
+*************************
 Make your choice:
 ```
 
@@ -212,7 +212,7 @@ Add a type [Star/Planet/Moon]? Star
 	Distance [real, light years]? 240
 ```
 
-#### Task 5: Importing from, and Exporting to a Binary File
+<!-- #### Task 5: Importing from, and Exporting to a Binary File
 
 This task implies that your program should have the ability to store the celestial objects collection in binary format **(between runs)** in a file called **"data.bin"**.
 
@@ -228,20 +228,20 @@ collection.
 
 * When the user selects to quit the program, the collection should be written to the binary file **prior** termination.
 * If the binary file "does" exist it should be overwritten.
-* If there are problems exporting the collection, an error message should be output to the user before the program terminates.
+* If there are problems exporting the collection, an error message should be output to the user before the program terminates. -->
 
-#### Task 6: Enquiry Submenu
+#### Task 5: Enquiry Submenu
 
 As the user selects "S" the program is expected to display a submenu, as follows:
 
 ```
-****** SUBMENU *******
+****** SUBMENU *************
 F) Furthest: Star
 L) Largest: Celestial Object
 A) All Moons: Planet
 R) Range: Degrees
 E) Exit: Submenu
-**********************
+****************************
 Make your choice:
 ```
 
@@ -290,15 +290,15 @@ List of celestial objects within range:
 	Moon: Iapetus 100 K
 ```
 
-#### Task 7: Reading/Importing from Text Files
+#### Task 6: Reading/Importing from Text Files
 
-As the user selects "R" the program is expected to read (or import) the data collection from a file named **"in.txt"**.
+As the user selects "R" the program is expected to read (or import) the data collection from a file named **"Driver.in"**.
 
-A sample input file is listed as [in.txt](https://github.com/youldash/NCCC/blob/master/skeleton/in.txt).
+A sample input file is listed as [Driver.in](https://github.com/youldash/NCCC/blob/master/skeleton/Driver.in).
 
-#### Task 8: Writing/Exporting to Text Files
+#### Task 7: Writing/Exporting to Text Files
 
-As the user selects "E" the program is expected to write (or export) the current data collection in memory to a file named **"out.txt"**.
+As the user selects "E" the program is expected to write (or export) the current data collection in memory to a file named **"Driver.out"**.
 
 While exporting to file, your program should produce a readable list of all celestial objects (in any order) that shows their name and their type (in brackets).
 

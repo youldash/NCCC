@@ -90,40 +90,12 @@ public class Driver implements Menu {
 	}
 	
 	/**
-	 * Read collection data from the binary fine "data.bin", if exists.
-	 * 
-	 * @return true/false
-	 * 
-	 * @throws IOException
-	 * @throws EOFException
-	 * @throws FileNotFoundException
-	 */
-	private boolean importBinaryData()
-			throws IOException, EOFException, FileNotFoundException {
-		
-	}
-
-	/**
 	 * Write to a data file. Filename is required by the user.
 	 */
 	private void exportData() {
 		
 	}
 	
-	/**
-	 * Save new collection content to the binary fine "data.bin".
-	 * 
-	 * @return true/false
-	 * 
-	 * @throws IOException
-	 * @throws EOFException
-	 * @throws FileNotFoundException
-	 */
-	private boolean exportBinaryData()
-			throws IOException,	EOFException, FileNotFoundException, NotSerializableException {
-				
-	}
-		
 	/**
 	 * Print collection content. Ordered by either ascending or descending matter.
 	 * 
@@ -269,7 +241,7 @@ public class Driver implements Menu {
 	}
 	
 	/**
-	 * Run sub-menu.
+	 * Run submenu.
 	 */
 	public void runSubMenu() {
 		
@@ -339,48 +311,9 @@ public class Driver implements Menu {
 		Driver driver = new Driver();
 		
 		/*
-		 * Checksum: if the binary file exists or not.
-		 */
-		try {
-			
-			if (driver.importBinaryData())
-				if (DEBUG)
-					System.out.println("Ready to read data from (" + BINARYFILE + ").");
-		}
-		catch (Exception e) {
-			
-			System.err.println("Initial run: file (" + BINARYFILE + ") not found!");
-		}
-		finally {
-			
-			if (DEBUG)
-				System.out.println("Initial run: collection has " +
-					collection.getSize() + " records.");
-		}
-
-		/*
 		 * Execute the remaining tasks as per requirements.
 		 * Routines are made through the main menu.
 		 */
 		driver.runMenu();
-
-		/*
-		 * Update the binary file with new, if so, collection data.
-		 */
-		try {
-			
-			driver.exportBinaryData();
-		}
-		catch (Exception e) {
-			
-			System.err.println("Final run: something went wrong while saving to (" +
-				BINARYFILE + ")!");
-		}
-		finally {
-			
-			if (DEBUG)
-				System.out.println("Termination: collection updated with " +
-					collection.getSize() + " records.");
-		}
 	}
 }
