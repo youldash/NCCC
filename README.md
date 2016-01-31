@@ -19,7 +19,7 @@ handling.
 
 **A proposed [solution](https://github.com/youldash/NCCC/blob/master/solution/) will be posted later, for reference.**
 
-## Implementation
+## Problem Identification
 
 Imagine yourself having to deal with many text file reports on certain Astronomical (or rather, Celestial Objects) observed and measured by a network of space stations. One way of solving this problem is to design, and develop an application that is capable of combining and storing these reports and to query the system to find interesting facts about these objects of interest.
 
