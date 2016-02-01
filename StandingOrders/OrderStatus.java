@@ -33,10 +33,10 @@
  */
 
 /**
- * InvoiceStatus enum.
+ * OrderStatus enum.
  */
-public enum InvoiceStatus {
+public enum OrderStatus {
 
-	issued,
-	paid
+	active,
+	closed
 }

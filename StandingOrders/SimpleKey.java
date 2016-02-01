@@ -32,11 +32,17 @@
  * Standing Orders created using TextMate version 2.0 on a Mac OS X 10.10.5 system.
  */
 
-/**
- * InvoiceStatus enum.
- */
-public enum InvoiceStatus {
+import java.lang.String;
 
-	issued,
-	paid
+/**
+ * SimpleKey interface.
+ */
+public interface SimpleKey {
+	
+	/**
+	 * Enforces the implementation of the getKey() method.
+	 * 
+	 * @return a class key as string
+	 */
+	public abstract String getKey();
 }
