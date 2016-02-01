@@ -29,57 +29,118 @@
  */
 
 /**
- * Standing Order System package created using TextMate version 2.0 on a Mac OS X 10.10.5 system.
+ * Standing Orders created using TextMate version 2.0 on a Mac OS X 10.10.5 system.
  */
-package standingordersystem;
 
 import java.lang.String;
+import java.util.HashSet;
+import java.util.Set;
 
 /**
- * Item class.
+ * Customer class.
  */
-public class Item {
+public class Customer implements SimpleKey {
 	
-	private Product product;
-	private int quantity;
+	private String id;
+	private String name;
+	private Set<Address> addresses;
+	private Set<Order> orders;
 	
 	/**
 	 * Default constructor.
 	 * 
-	 * @param the product
-	 * @param the quantity
+	 * @param id
+	 * @param name
 	 */
-	public Item(Product product, int quantity) {
+	public Customer(String id, String name) {
 		
-		/*
-		 * Assuming that all parameters are not null. No error handling is made for simplicity. 
-		 */
-		this.product = product;
-		this.quantity = quantity;
+		setId(id);
+		setName(name);
+		
+		this.addresses = new HashSet<Address>();
+		this.orders = new HashSet<Order>();
 	}
 	
 	/**
-	 * @return the product
+	 * @return the id
 	 */
-	public Product getProduct() {
+	public String getID() {
 		
-		return product;
+		return id;
 	}
 	
 	/**
-	 * @return the quantity
+	 * @param id
 	 */
-	public int getQuantity() {
+	public void setId(String id) {
 		
-		return quantity;
+		this.id = id;
 	}
-	
+
+	/**
+	 * @return the name
+	 */
+	public String getName() {
+		
+		return name;
+	}
+
+	/**
+	 * @param name
+	 */
+	public void setName(String name) {
+		
+		this.name = name;
+	}
+
 	/**
 	 * @return a string description
 	 */
 	public String toString() {
-			
-		return "Item[product: " + product.toString() +
-			", quantity: " + quantity + "]";
+		
+		return "Customer[id: " + id + ", name: " + name + "]";
+	}
+		
+	/**
+	 * Abstract method getKey() in SimpleKey
+	 * 
+	 * @return number
+	 */
+	@Override
+	public String getKey() {
+		
+		return id;
+	}
+
+	/**
+	 * @return the addresses
+	 */
+	public Set<Address> getAddresses() {
+		
+		return addresses;
+	}
+
+	/**
+	 * @param addresses the addresses to set
+	 */
+	public void setAddresses(Set<Address> addresses) {
+		
+		this.addresses = addresses;
+	}
+
+	/**
+	 * @return the orders
+	 */
+	public Set<Order> getOrders() {
+		
+		return orders;
+	}
+
+	/**
+	 * @param orders the orders to set
+	 */
+	public void setOrders(Set<Order> orders) {
+		
+		this.orders = orders;
 	}
 }

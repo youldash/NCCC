@@ -29,119 +29,54 @@
  */
 
 /**
- * Standing Order System package created using TextMate version 2.0 on a Mac OS X 10.10.5 system.
+ * Standing Orders created using TextMate version 2.0 on a Mac OS X 10.10.5 system.
  */
-package standingordersystem;
 
-import java.lang.String;
-import java.util.HashSet;
-import java.util.Set;
+import java.util.Collection;
+import java.util.ArrayList;
 
 /**
- * Customer class.
+ * Helper class.
  */
-public class Customer implements SimpleKey {
-	
-	private String id;
-	private String name;
-	private Set<Address> addresses;
-	private Set<Order> orders;
+public class Helper {
 	
 	/**
-	 * Default constructor.
+	 * Helper method that supports SimpleKey searches.
 	 * 
-	 * @param id
-	 * @param name
+	 * @param collection
+	 * @param key
+	 * @return
 	 */
-	public Customer(String id, String name) {
+	public static <E extends SimpleKey> E search(Collection<E> collection, String key) {
 		
-		setId(id);
-		setName(name);
+		for (E e : collection) {
+			
+			if (e.getKey().equals(key)) {
+				
+				return e;
+			}
+		}
 		
-		this.addresses = new HashSet<Address>();
-		this.orders = new HashSet<Order>();
-	}
-	
-	/**
-	 * @return the id
-	 */
-	public String getID() {
-		
-		return id;
-	}
-	
-	/**
-	 * @param id
-	 */
-	public void setId(String id) {
-		
-		this.id = id;
+		return null;
 	}
 
-	/**
-	 * @return the name
-	 */
-	public String getName() {
+   /**
+    * Helper method that supports CompositeKey searches.
+    * 
+    * @param collection
+    * @param key
+    * @return
+    */
+	public static <E extends CompositeKey> E search(Collection <E> collection, ArrayList<String> key) {
 		
-		return name;
-	}
+		for (E e : collection) {
+			
+			if (e.getKey().equals(key)) {
+				
+				return e;
+			}
+		}
 
-	/**
-	 * @param name
-	 */
-	public void setName(String name) {
-		
-		this.name = name;
-	}
-
-	/**
-	 * @return a string description
-	 */
-	public String toString() {
-		
-		return "Customer[id: " + id + ", name: " + name + "]";
-	}
-		
-	/**
-	 * Abstract method getKey() in SimpleKey
-	 * 
-	 * @return number
-	 */
-	@Override
-	public String getKey() {
-		
-		return id;
-	}
-
-	/**
-	 * @return the addresses
-	 */
-	public Set<Address> getAddresses() {
-		
-		return addresses;
-	}
-
-	/**
-	 * @param addresses the addresses to set
-	 */
-	public void setAddresses(Set<Address> addresses) {
-		
-		this.addresses = addresses;
-	}
-
-	/**
-	 * @return the orders
-	 */
-	public Set<Order> getOrders() {
-		
-		return orders;
-	}
-
-	/**
-	 * @param orders the orders to set
-	 */
-	public void setOrders(Set<Order> orders) {
-		
-		this.orders = orders;
+		return null;
 	}
 }

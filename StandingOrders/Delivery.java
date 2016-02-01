@@ -29,54 +29,48 @@
  */
 
 /**
- * Standing Order System package created using TextMate version 2.0 on a Mac OS X 10.10.5 system.
+ * Standing Orders created using TextMate version 2.0 on a Mac OS X 10.10.5 system.
  */
-package standingordersystem;
 
 import java.lang.String;
-import java.util.Set;
 import java.util.HashSet;
+import java.util.Set;
 
 /**
- * Invoice class.
+ * Delivery class.
  */
-public class Invoice {
+public class Delivery {
 
 	private String id;
-	private int fromDate;
-	private int toDate;
 	private Customer customer;
-	private Set<Delivery> deliveries;
-	private double totalCost;
-	private int payDate;
-	private InvoiceStatus status;
+	private Address address;
+	private int date;
+	private DayOfWeek day;
+	private Set<DeliveryItem> deliveryItems;
 	
 	/**
 	 * Default constructor.
 	 * 
 	 * @param id
-	 * @param fromDate
-	 * @param toDate
 	 * @param customer
-	 * @param totalCost
-	 * @param payDate
+	 * @param address
+	 * @param date
+	 * @param day
+	 * @param deliveryItems
 	 */
-	public Invoice(String id, int fromDate, int toDate, Customer customer,
-	double totalCost, int payDate) {
+	public Delivery(String id, Customer customer, Address address, int date, DayOfWeek day) {
 		
 		/*
 		 * Assuming that all parameters are not null. No error handling is made for simplicity. 
 		 */
 		setId(id);
-		setFromDate(fromDate);
-		setToDate(toDate);
 		setCustomer(customer);
-		setDeliveries(new HashSet<Delivery>());
-		setTotalCost(totalCost);
-		setPayDate(payDate);
-		setStatus(InvoiceStatus.issued);
+		setAddress(address);
+		setDate(date);
+		setDayOfWeek(day);
+		setDeliveryItems(new HashSet<DeliveryItem>());
 	}
-
+	
 	/**
 	 * @return the id
 	 */
@@ -84,45 +78,13 @@ public class Invoice {
 		
 		return id;
 	}
-
+	
 	/**
 	 * @param id the id to set
 	 */
 	public void setId(String id) {
 		
 		this.id = id;
-	}
-
-	/**
-	 * @return the fromDate
-	 */
-	public int getFromDate() {
-		
-		return fromDate;
-	}
-
-	/**
-	 * @param fromDate the fromDate to set
-	 */
-	public void setFromDate(int fromDate) {
-		
-		this.fromDate = fromDate;
-	}
-
-	/**
-	 * @return the toDate
-	 */
-	public int getToDate() {
-		
-		return toDate;
-	}
-
-	/**
-	 * @param toDate the toDate to set
-	 */
-	public void setToDate(int toDate) {
-		
-		this.toDate = toDate;
 	}
 
 	/**
@@ -142,86 +104,109 @@ public class Invoice {
 	}
 
 	/**
-	 * @return the deliveries
+	 * @return the address
 	 */
-	public Set<Delivery> getDeliveries() {
+	public Address getAddress() {
 		
-		return deliveries;
+		return address;
 	}
 
 	/**
-	 * @param deliveries the deliveries to set
+	 * @param address the address to set
 	 */
-	public void setDeliveries(Set<Delivery> deliveries) {
+	public void setAddress(Address address) {
 		
-		if (deliveries != null) {
-			
-			this.deliveries = deliveries;
-			
-		} else {
-			
-			this.deliveries = new HashSet<Delivery>();
-		}	
+		this.address = address;
 	}
 
 	/**
-	 * @return the totalCost
+	 * @return the date
 	 */
-	public double getTotalCost() {
+	public int getDate() {
 		
-		return totalCost;
+		return date;
 	}
 
 	/**
-	 * @param totalCost the totalCost to set
+	 * @param date the date to set
 	 */
-	public void setTotalCost(double totalCost) {
+	public void setDate(int date) {
 		
-		this.totalCost = totalCost;
+		this.date = date;
 	}
 
 	/**
-	 * @return the payDate
+	 * @return the dayOfWeek
 	 */
-	public int getPayDate() {
+	public DayOfWeek getDayOfWeek() {
 		
-		return payDate;
+		return day;
 	}
 
 	/**
-	 * @param payDate the payDate to set
+	 * @param dayOfWeek the dayOfWeek to set
 	 */
-	public void setPayDate(int payDate) {
+	public void setDayOfWeek(DayOfWeek day) {
 		
-		this.payDate = payDate;
+		this.day = day;
 	}
 
 	/**
-	 * @return the status
+	 * @return the deliveryItems
 	 */
-	public InvoiceStatus getStatus() {
+	public Set<DeliveryItem> getDeliveryItems() {
 		
-		return status;
+		return deliveryItems;
 	}
 
 	/**
-	 * @param status the status to set
+	 * @param the deliveryItems
 	 */
-	public void setStatus(InvoiceStatus status) {
+	public void setDeliveryItems(Set<DeliveryItem> deliveryItems) {
 		
-		this.status = status;
+		this.deliveryItems = deliveryItems;
 	}
 	
 	/**
-	 * Add a delivery.
+	 * Add a delivery item.
 	 * 
-	 * @param delivery
+	 * @param deliveryItem
 	 */
-	public void addDelivery(Delivery delivery) {
+	public void addDeliveryItem(DeliveryItem deliveryItem) {
 		
-		if (delivery != null) {
+		/*
+		 * If the order status is still active, create and add the new item
+		 */
+		if (deliveryItem.getOrder().getStatus() == OrderStatus.active) {
 			
-			this.deliveries.add(delivery);
+			this.deliveryItems.add(deliveryItem);
+			
+		} else {
+			
+			System.out.println("ERROR addDeliveryItem: OrderStatus.closed!");
+		}
+	}
+	
+	/**
+	 * Add a delivery item.
+	 * 
+	 * @param order
+	 * @param quantity
+	 * @param difference
+	 * @throws Exception
+	 */
+	public void addDeliveryItem(Order order, int quantity, int difference) {
+		
+		/*
+		 * If the order status is still active, create and add the new item
+		 */
+		if (order.getStatus() == OrderStatus.active) {
+			
+			this.deliveryItems.add(new DeliveryItem(order, quantity, difference));
+			
+		} else {
+			
+			System.out.println("ERROR addDeliveryItem: OrderStatus.closed!");
 		}
 	}
 	
@@ -229,14 +214,13 @@ public class Invoice {
 	 * @return a string description
 	 */
 	public String toString() {
-				
-		return "Invoice[id: " + getId() +
-			", fromDate: " + getFromDate() +
-			", toDate: " + getToDate() +
+		
+		return "Delivery[id: " + getId() +
 			", customer: " + getCustomer().toString() +
-			", deliveries: " + getDeliveries().toString() +
-			", totalCost: " + getTotalCost() +
-			", payDate: " + getPayDate() +
-			", status: " + getStatus() + "]";
+			", address: " + getAddress().toString() +
+			", date: " + getDate() +
+			", dayOfWeek: " + getDayOfWeek() +
+			", date: " + getDate() +
+			", deliveryItems: " + getDeliveryItems().toString() + "]";
 	}
 }

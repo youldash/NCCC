@@ -29,55 +29,20 @@
  */
 
 /**
- * Standing Order System package created using TextMate version 2.0 on a Mac OS X 10.10.5 system.
+ * Standing Orders created using TextMate version 2.0 on a Mac OS X 10.10.5 system.
  */
-package standingordersystem;
 
-import java.util.Collection;
 import java.util.ArrayList;
 
 /**
- * Helper class.
+ * CompositeKey class.
  */
-public class Helper {
+public interface CompositeKey {
 	
 	/**
-	 * Helper method that supports SimpleKey searches.
+	 * Abstract method getKey.
 	 * 
-	 * @param collection
-	 * @param key
-	 * @return
+	 * @return an array list of key strings
 	 */
-	public static <E extends SimpleKey> E search(Collection<E> collection, String key) {
-		
-		for (E e : collection) {
-			
-			if (e.getKey().equals(key)) {
-				
-				return e;
-			}
-		}
-		
-		return null;
-	}
-
-   /**
-    * Helper method that supports CompositeKey searches.
-    * 
-    * @param collection
-    * @param key
-    * @return
-    */
-	public static <E extends CompositeKey> E search(Collection <E> collection, ArrayList<String> key) {
-		
-		for (E e : collection) {
-			
-			if (e.getKey().equals(key)) {
-				
-				return e;
-			}
-		}
-
-		return null;
-	}
+	public abstract ArrayList<String> getKey();
 }

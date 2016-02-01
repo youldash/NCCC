@@ -29,21 +29,19 @@
  */
 
 /**
- * Standing Order System package created using TextMate version 2.0 on a Mac OS X 10.10.5 system.
+ * Standing Orders created using TextMate version 2.0 on a Mac OS X 10.10.5 system.
  */
-package standingordersystem;
-
-import java.util.ArrayList;
 
 /**
- * CompositeKey class.
+ * DayOfWeek enum.
  */
-public interface CompositeKey {
+public enum DayOfWeek {
 	
-	/**
-	 * Abstract method getKey.
-	 * 
-	 * @return an array list of key strings
-	 */
-	public abstract ArrayList<String> getKey();
+	Monday,
+	Tuesday,
+	Wednesday,
+	Thursday,
+	Friday,
+	Saturday,
+	Sunday
 }

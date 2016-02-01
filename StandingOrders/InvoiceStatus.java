@@ -29,20 +29,14 @@
  */
 
 /**
- * Standing Order System package created using TextMate version 2.0 on a Mac OS X 10.10.5 system.
+ * Standing Orders created using TextMate version 2.0 on a Mac OS X 10.10.5 system.
  */
-package standingordersystem;
 
 /**
- * DayOfWeek enum.
+ * InvoiceStatus enum.
  */
 public enum DayOfWeek {
 	
-	Monday,
-	Tuesday,
-	Wednesday,
-	Thursday,
-	Friday,
-	Saturday,
-	Sunday
+	issued,
+	paid
 }
