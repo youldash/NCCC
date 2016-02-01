@@ -166,7 +166,8 @@ public class OrderEntrySystem {
 	 * @param contactPhone
 	 * @throws Exception
 	 */
-	public void addAddress(String id,
+	public void addAddress(
+		String id,
 		String line1,
 		String line2,
 		String contactPerson,
@@ -259,8 +260,8 @@ public class OrderEntrySystem {
 	
 		boolean pre = (product == null);
 	
-		if (!pre)
-		{
+		if (!pre) {
+			
 			String message = "ERROR addProduct: Product Number is not unique!";
 			         
 			throw new Exception(message);
