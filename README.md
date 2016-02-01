@@ -14,6 +14,7 @@ The general aims are:
 * To practice file IO (input and output) in Java.
 * To practice using Abstraction and Inheritance in Java.
 * To practice using Object Serialization in Java.
+* To practice implementing data structures in Java (without the reliance on the Java API).
 * To make implementations more robust through mechanisms such as Exception
 Handling in Java.
 

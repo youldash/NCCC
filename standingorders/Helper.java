@@ -29,22 +29,52 @@
  */
 
 /**
- * (NCCC skeleton code) package created using TextMate version 2.0 on a Mac OS X 10.10.5 system.
+ * Standing Orders package created using TextMate version 2.0 on a Mac OS X 10.10.5 system.
  */
-package skeleton;
+package standingorders;
 
-/**
- * Collection class.
- *
- * Try to implement this container class without the need to rely on the built-in Java collection classes,
- * e.g. ArrayList, Set, ...
- */
-public class CollectionInSpace {
+import java.util.Collection;
+import java.util.ArrayList;
+
+public class Helper {
 	
 	/**
-	 * Default constructor.
+	 * Helper method that supports SimpleKey searches.
+	 * 
+	 * @param collection
+	 * @param key
+	 * @return
 	 */
-	public CollectionInSpace() {
+	public static <E extends SimpleKey> E search(Collection<E> collection, String key)
+	{   
+		for (E e : collection) {
+			
+			if (e.getKey().equals(key)) {
+				
+				return e;
+			}
+		}
 		
-	}	
+		return null;
+	}
+
+   /**
+    * Helper method that supports CompositeKey searches.
+    * 
+    * @param collection
+    * @param key
+    * @return
+    */
+	public static <E extends CompositeKey> E search(Collection <E> collection, ArrayList<String> key)
+	{   
+		for (E e : collection) {
+			
+			if (e.getKey().equals(key)) {
+				
+				return e;
+			}
+		}
+
+		return null;
+	}
 }
