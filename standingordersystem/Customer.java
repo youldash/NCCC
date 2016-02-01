@@ -33,51 +33,115 @@
  */
 package standingordersystem;
 
-import java.util.Collection;
-import java.util.ArrayList;
+import java.lang.String;
+import java.util.HashSet;
+import java.util.Set;
 
 /**
- * Helper class.
+ * Customer class.
  */
-public class Helper {
+public class Customer implements SimpleKey {
+	
+	private String id;
+	private String name;
+	private Set<Address> addresses;
+	private Set<Order> orders;
 	
 	/**
-	 * Helper method that supports SimpleKey searches.
+	 * Default constructor.
 	 * 
-	 * @param collection
-	 * @param key
-	 * @return
+	 * @param id
+	 * @param name
 	 */
-	public static <E extends SimpleKey> E search(Collection<E> collection, String key) {
+	public Customer(String id, String name) {
 		
-		for (E e : collection) {
-			
-			if (e.getKey().equals(key)) {
-				
-				return e;
-			}
-		}
+		setId(id);
+		setName(name);
 		
-		return null;
+		this.addresses = new HashSet<Address>();
+		this.orders = new HashSet<Order>();
+	}
+	
+	/**
+	 * @return the id
+	 */
+	public String getID() {
+		
+		return id;
+	}
+	
+	/**
+	 * @param id
+	 */
+	public void setId(String id) {
+		
+		this.id = id;
 	}
 
-   /**
-    * Helper method that supports CompositeKey searches.
-    * 
-    * @param collection
-    * @param key
-    * @return
-    */
-	public static <E extends CompositeKey> E search(Collection <E> collection, ArrayList<String> key) {
+	/**
+	 * @return the name
+	 */
+	public String getName() {
 		
-		for (E e : collection) {
-			
-			if (e.getKey().equals(key)) {
-				
-				return e;
-			}
-		}
+		return name;
+	}
 
-		return null;
+	/**
+	 * @param name
+	 */
+	public void setName(String name) {
+		
+		this.name = name;
+	}
+
+	/**
+	 * @return a string description
+	 */
+	public String toString() {
+		
+		return "Customer[id: " + id + ", name: " + name + "]";
+	}
+		
+	/**
+	 * Abstract method getKey() in SimpleKey
+	 * 
+	 * @return number
+	 */
+	@Override
+	public String getKey() {
+		
+		return id;
+	}
+
+	/**
+	 * @return the addresses
+	 */
+	public Set<Address> getAddresses() {
+		
+		return addresses;
+	}
+
+	/**
+	 * @param addresses the addresses to set
+	 */
+	public void setAddresses(Set<Address> addresses) {
+		
+		this.addresses = addresses;
+	}
+
+	/**
+	 * @return the orders
+	 */
+	public Set<Order> getOrders() {
+		
+		return orders;
+	}
+
+	/**
+	 * @param orders the orders to set
+	 */
+	public void setOrders(Set<Order> orders) {
+		
+		this.orders = orders;
 	}
 }
