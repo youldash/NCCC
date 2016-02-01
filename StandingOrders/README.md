@@ -11,6 +11,12 @@ The general aims are:
 * To solve a typical, real-world problem in an Object-Oriented manner.
 * To demonstrate the use of Enums, Abstraction and Inheritance in Java.
 * To demonstrate the benefits of Exception Handling in Java.
-* To demonstrate the benefits of running various tests (using predefined Use Cases) for building robust projects.
+* To demonstrate the benefits of running various tests (using predefined Use Cases) for developing robust, reliable projects.
 
-**Try creating **
+### StandingOrderSystem Implementation
+
+**Try creating a new Console-based application (and name it "StandingOrderSystemTester" e.g.) using [NetBeans](https://netbeans.org/), import all Java files, and then run it.**
+
+The outcome should confirm to the following (Console view):
+
+![Screenshot](https://raw.github.com/youldash/NCCC/master/misc/Console.png)

@@ -146,7 +146,7 @@ public class OrderEntrySystemTester {
 		
 		testCount++;
 		
-		System.out.println("---------------- Valid Add Product - [TEST: " + testCount + "] - UC1");
+		System.out.println("--- Valid Add Product - [TEST: " + testCount + "] - UC1");
 
 		/*
 		 * Add a new product with product id p01.
@@ -164,7 +164,7 @@ public class OrderEntrySystemTester {
 		oes.addProduct("p02", "Frozen Bagel - 24pk", 9, 30);
 		
 		System.out.println(oes);
-		System.out.println("---------------- End of valid UC1 ----------------");
+		System.out.println("--- End of valid UC1 ---");
 		System.out.println();
 	}
 
@@ -177,7 +177,7 @@ public class OrderEntrySystemTester {
 		
 		testCount++;
 		
-		System.out.println("---------------- Invalid Add Product - [TEST: " + testCount + "] - UC1");
+		System.out.println("--- Invalid Add Product - [TEST: " + testCount + "] - UC1");
 
 		/*
 		 * Add a new product with product id p03.
@@ -198,7 +198,7 @@ public class OrderEntrySystemTester {
 		}
 
 		System.out.println(oes);
-		System.out.println("---------------- End of invalid UC1 ----------------");
+		System.out.println("--- End of invalid UC1 ---");
 		System.out.println();
 	}
 
@@ -211,7 +211,7 @@ public class OrderEntrySystemTester {
 		
 		testCount++;
 		
-		System.out.println("---------------- Valid Add Customer - [TEST: " + testCount + "] - UC2");
+		System.out.println("--- Valid Add Customer - [TEST: " + testCount + "] - UC2");
 
 		/*
 		 * Add a new customer with customer id c01.
@@ -222,7 +222,7 @@ public class OrderEntrySystemTester {
 		 * Then add an address to that customer.
 		 */
 		oes.addAddressToCustomer("c01",
-			new Address("a01", "1 Main St", "Melbourne", "Andrew", "555-555-5555"));
+			new Address("a01", "1 Main St", "Mecca", "Andrew", "555-555-5555"));
 		
 		/*
 		 * Add a new customer with customer id c02.
@@ -233,10 +233,10 @@ public class OrderEntrySystemTester {
 		 * Then add an address to that customer.
 		 */
 		oes.addAddressToCustomer("c01",
-			new Address("a02", "1 Part St", "Melbourne", "Jeff", "544-444-4444"));
+			new Address("a02", "1 Part St", "Mecca", "Jeff", "544-444-4444"));
 		
 		System.out.println(oes);
-		System.out.println("---------------- End of valid UC2 ----------------");
+		System.out.println("--- End of valid UC2 ---");
 		System.out.println();
 	}
 	
@@ -249,7 +249,7 @@ public class OrderEntrySystemTester {
 		
 		testCount++;
 		
-		System.out.println("---------------- Invalid Add Customer - [TEST: " + testCount + "] - UC2");
+		System.out.println("--- Invalid Add Customer - [TEST: " + testCount + "] - UC2");
 
 		/*
 		 * Add a customer with customer id c03.
@@ -261,13 +261,13 @@ public class OrderEntrySystemTester {
 			/*
 			 * Add a new customer with customer id c03.
 			 */
-			oes.addCustomer("c03", "BeBe");
+			oes.addCustomer("c03", "Jude");
 			
 			/*
 			 * Then add an address to that customer.
 			 */
 			oes.addAddressToCustomer("c03",
-				new Address("a01", "2 City Pl", "Melbourne", "Someone", "500-000-0000"));
+				new Address("a01", "2 City Pl", "Mecca", "Someone", "500-000-0000"));
 			
 		} catch (Exception e) {
 			
@@ -275,7 +275,7 @@ public class OrderEntrySystemTester {
 		}
 
 		System.out.println(oes);
-		System.out.println("---------------- End of invalid UC2 ----------------");
+		System.out.println("--- End of invalid UC2 ---");
 		System.out.println(); 
 	}
 	
@@ -288,16 +288,16 @@ public class OrderEntrySystemTester {
 		
 		testCount++;
 		
-		System.out.println("---------------- Valid Add Address to Customer - [TEST: " + testCount + "] - UC3");
+		System.out.println("--- Valid Add Address to Customer - [TEST: " + testCount + "] - UC3");
 		
 		/*
 		 * Add an address a03 to an existing customer c03.
 		 */
 		oes.addAddressToCustomer("c03",
-			new Address("a03", "1 Main St", "Melbourne", "FoFo", "522-123-1234"));
+			new Address("a03", "1 Main St", "Mecca", "The One", "522-123-1234"));
 		
 		System.out.println(oes);
-		System.out.println("---------------- End of valid UC3 ----------------");
+		System.out.println("--- End of valid UC3 ---");
 		System.out.println();
 	}
 	
@@ -310,7 +310,7 @@ public class OrderEntrySystemTester {
 		
 		testCount++;
 		
-		System.out.println("---------------- Invalid Add Address to Customer - [TEST: " + testCount + "] - UC3");
+		System.out.println("--- Invalid Add Address to Customer - [TEST: " + testCount + "] - UC3");
 		
 		/*
 		 * Add an address a03 to an existing customer c03.
@@ -318,7 +318,7 @@ public class OrderEntrySystemTester {
 		try {
 			
 			oes.addAddressToCustomer("c03",
-					new Address("a03", "10 Small St", "Sydney", "FoFo", "522-123-1234"));
+					new Address("a03", "10 Small St", "Sydney", "The One", "522-123-1234"));
 			
 		} catch (Exception e) {
 			
@@ -326,7 +326,7 @@ public class OrderEntrySystemTester {
 		}
 		
 		System.out.println(oes);
-		System.out.println("---------------- End of invalid UC3 ----------------");
+		System.out.println("--- End of invalid UC3 ---");
 		System.out.println();
 	}
 
@@ -339,7 +339,7 @@ public class OrderEntrySystemTester {
 		
 		testCount++;
 		
-		System.out.println("---------------- Valid Add Order to Customer - [TEST: " + testCount + "] - UC4");
+		System.out.println("--- Valid Add Order to Customer - [TEST: " + testCount + "] - UC4");
 		
 		/*
 		 * Add new order o01 to an existing customer c01.
@@ -354,7 +354,7 @@ public class OrderEntrySystemTester {
 				new int[100], 3, 30, OrderStatus.active);
 
 		System.out.println(oes);
-		System.out.println("---------------- End of valid UC4 ----------------");
+		System.out.println("--- End of valid UC4 ---");
 		System.out.println();
 	}
 	
@@ -367,7 +367,7 @@ public class OrderEntrySystemTester {
 		
 		testCount++;
 		
-		System.out.println("---------------- Invalid Add Order to Customer - [TEST: " + testCount + "] - UC4");
+		System.out.println("--- Invalid Add Order to Customer - [TEST: " + testCount + "] - UC4");
 		
 		/*
 		 * Add an order o01 to an existing customer c01.
@@ -383,7 +383,7 @@ public class OrderEntrySystemTester {
 			System.out.println(e.getMessage());
 		}
 		
-		System.out.println("---------------- End of Invalid UC4 ----------------");
+		System.out.println("--- End of Invalid UC4 ---");
 		System.out.println();
 	}
 
@@ -397,7 +397,7 @@ public class OrderEntrySystemTester {
 		
 		testCount++;
 		
-		System.out.println("---------------- Valid List Standing Orders - [TEST: " + testCount + "] - UC5");
+		System.out.println("--- Valid List Standing Orders - [TEST: " + testCount + "] - UC5");
 		
 		/*
 		 * List standing orders, which are made on a Tuesday (day 1). 
@@ -409,7 +409,7 @@ public class OrderEntrySystemTester {
 		 */
 		oes.listStandingOrders(3);
 
-		System.out.println("---------------- End of Valid UC5 ----------------");
+		System.out.println("--- End of Valid UC5 ---");
 		System.out.println();
 	}
 	
@@ -423,7 +423,7 @@ public class OrderEntrySystemTester {
 		
 		testCount++;
 		
-		System.out.println("---------------- Invalid List Standing Orders - [TEST: " + testCount + "] - UC5");
+		System.out.println("--- Invalid List Standing Orders - [TEST: " + testCount + "] - UC5");
 		
 		/*
 		 * List standing orders, which are made on a Monday (day 0).
@@ -438,7 +438,7 @@ public class OrderEntrySystemTester {
 			System.out.println(e.getMessage());
 		}
 
-		System.out.println("---------------- End of Invalid UC5 ----------------");
+		System.out.println("--- End of Invalid UC5 ---");
 		System.out.println();
 	}
 	
@@ -451,7 +451,7 @@ public class OrderEntrySystemTester {
 		
 		testCount++;
 		
-		System.out.println("---------------- Valid Add Delivery - [TEST: " + testCount + "] - UC6");
+		System.out.println("--- Valid Add Delivery - [TEST: " + testCount + "] - UC6");
 		
 		/*
 		 * Add a new delivery d01 for customer c01 to address a01. 
@@ -477,7 +477,7 @@ public class OrderEntrySystemTester {
 		);
 
 		System.out.println(oes);
-		System.out.println("---------------- End of Valid UC6 ----------------");
+		System.out.println("--- End of Valid UC6 ---");
 		System.out.println();
 	}
 	
@@ -490,7 +490,7 @@ public class OrderEntrySystemTester {
 		
 		testCount++;
 		
-		System.out.println("---------------- Invalid Add Delivery - [TEST: " + testCount + "] - UC6");
+		System.out.println("--- Invalid Add Delivery - [TEST: " + testCount + "] - UC6");
 		
 		try {
 			
@@ -512,7 +512,7 @@ public class OrderEntrySystemTester {
 		}
 
 		System.out.println(oes);
-		System.out.println("---------------- End of Invalid UC6 ----------------");
+		System.out.println("--- End of Invalid UC6 ---");
 		System.out.println();
 	}
 	
@@ -528,10 +528,10 @@ public class OrderEntrySystemTester {
 		 */
 		testCount++;
 		
-		System.out.println("---------------- Valid Delivery Docket - [TEST: " + testCount + "] - UC7");
+		System.out.println("--- Valid Delivery Docket - [TEST: " + testCount + "] - UC7");
 		
 		System.out.println(oes);
-		System.out.println("---------------- End of Valid UC7 ----------------");
+		System.out.println("--- End of Valid UC7 ---");
 		System.out.println();
 	}
 	
@@ -548,10 +548,10 @@ public class OrderEntrySystemTester {
 		 */
 		testCount++;
 		
-		System.out.println("---------------- Invalid Delivery Docket - [TEST: " + testCount + "] - UC7");
+		System.out.println("--- Invalid Delivery Docket - [TEST: " + testCount + "] - UC7");
 		
 		System.out.println(oes);
-		System.out.println("---------------- End of Invalid UC7 ----------------");
+		System.out.println("--- End of Invalid UC7 ---");
 		System.out.println();
 	}
 
@@ -565,11 +565,11 @@ public class OrderEntrySystemTester {
 		
 		testCount++;
 		
-		System.out.println("---------------- Valid List Customers - [TEST: " + testCount + "] - UC8");
+		System.out.println("--- Valid List Customers - [TEST: " + testCount + "] - UC8");
 		
 		oes.listCustomers(6);
 		
-		System.out.println("---------------- End of Valid UC8 ----------------");
+		System.out.println("--- End of Valid UC8 ---");
 		System.out.println();
 	}
 	
@@ -583,14 +583,14 @@ public class OrderEntrySystemTester {
 		
 		testCount++;
 		
-		System.out.println("---------------- Invalid List Customers - [TEST: " + testCount + "] - UC8");
+		System.out.println("--- Invalid List Customers - [TEST: " + testCount + "] - UC8");
 		
 		/*
 		 * Not fully functional. 
 		 */
 		oes.listCustomers(-1);
 		
-		System.out.println("---------------- End of Invalid UC8 ----------------");
+		System.out.println("--- End of Invalid UC8 ---");
 		System.out.println();
 	}
 	
@@ -603,7 +603,7 @@ public class OrderEntrySystemTester {
 		
 		testCount++;
 		
-		System.out.println("---------------- Valid Add Invoice - [TEST: " + testCount + "] - UC9");
+		System.out.println("--- Valid Add Invoice - [TEST: " + testCount + "] - UC9");
 		
 		/*
 		 * Add an invoice i01 for delivery d01.
@@ -615,7 +615,7 @@ public class OrderEntrySystemTester {
 				1, DayOfWeek.Monday),
 				100, 30);
 		
-		System.out.println("---------------- End of Valid UC9 ----------------");
+		System.out.println("--- End of Valid UC9 ---");
 		System.out.println();
 	}
 	
@@ -628,14 +628,14 @@ public class OrderEntrySystemTester {
 		
 		testCount++;
 		
-		System.out.println("---------------- Invalid Add Invoice - [TEST: " + testCount + "] - UC9");
+		System.out.println("--- Invalid Add Invoice - [TEST: " + testCount + "] - UC9");
 		
 		/*
 		 * Not fully functional. 
 		 */
 		oes.listCustomers(-1);
 		
-		System.out.println("---------------- End of Invalid UC9 ----------------");
+		System.out.println("--- End of Invalid UC9 ---");
 		System.out.println();
 	}
 	
@@ -648,9 +648,9 @@ public class OrderEntrySystemTester {
 		
 		testCount++;
 		
-		System.out.println("---------------- Valid Generate Invoice - [TEST: " + testCount + "] - UC10");
+		System.out.println("--- Valid Generate Invoice - [TEST: " + testCount + "] - UC10");
 		
-		System.out.println("---------------- End of Valid UC10 ----------------");
+		System.out.println("--- End of Valid UC10 ---");
 		System.out.println();
 	}
 	
@@ -663,13 +663,13 @@ public class OrderEntrySystemTester {
 		
 		testCount++;
 		
-		System.out.println("---------------- Invalid Add Invoice - [TEST: " + testCount + "] - UC10");
+		System.out.println("--- Invalid Add Invoice - [TEST: " + testCount + "] - UC10");
 		
 		/*
 		 * Not tested properly.
 		 */
 		
-		System.out.println("---------------- End of Invalid UC10 ----------------");
+		System.out.println("--- End of Invalid UC10 ---");
 		System.out.println();
 	}
 }
