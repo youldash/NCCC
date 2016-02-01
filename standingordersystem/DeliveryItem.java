@@ -1,4 +1,3 @@
-
 /**
  * @author Mustafa Youldash <mmyouldash@uqu.edu.sa>.
  * @copyright (c) 2016 Umm Al-Qura University. All rights reserved.
