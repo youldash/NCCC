@@ -324,7 +324,7 @@ Neptune (Planet)
 
 ## Bonus Tasks
 
-Coming soon...
+See [StandingOrders](https://github.com/youldash/NCCC/blob/master/StandingOrders/) for a complete example on Unit Testing in Java.
 
 ## Sponsors
 This repository is sponsored in part by the Department of [Department of Computer Science](https://uqu.edu.sa/computer-sciences-information-en/) at Umm Al-Qura University, Mecca, Saudi Arabia.
