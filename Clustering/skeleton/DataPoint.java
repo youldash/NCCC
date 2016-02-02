@@ -32,6 +32,9 @@
  * Skeleton code created using TextMate version 2.0 on a Mac OS X 10.10.5 system.
  */
 
+import java.lang.String;
+import java.lang.Math;
+
 "A typical DataPoint data structure represents a candidate for performing Cluster Analysis.
 In this example, a two-dimensional (2D) DataPoint contains .
 For example:
@@ -46,6 +49,136 @@ A DataPoint may also contain a name (which defines it), a reference to "
  * - Euclidean distance (from Centroid).
  */
 public class DataPoint {
+	
+	/**
+	 * Variables.
+	 */
+    private double x, y;
+    private String identifier;
+    private Cluster cluster;
+    private double euclideanDistance;
+	
+	/**
+	 * Default constructor.
+	 */
+	public DataPoint() {
+		
+        this.x = 0.0;
+        this.y = 0.0;
+        this.identifier = null;
+        this.cluster = null;
+	}
+	
+	/**
+	 * @param x
+	 * @param y
+	 * @param identifier
+	 * @param cluster
+	 */
+	public DataPoint(double x, double y, String identifier, String, cluster) {
+		
+        this.x = 0.0;
+        this.y = 0.0;
+        this.identifier = null;
+        this.cluster = null;
+	}
+	
+	/**
+	 * @param x
+	 */
+    public void setX(double x) {
+		
+        this.x = x;
+    }
+	
+	/**
+	 * @param y
+	 */
+    public void setY(double y) {
+		
+        this.y = y;
+    }
+	
+	/**
+	 * @param identifier
+	 */
+    public void setIdentifier(String identifier) {
+		
+        this.identifier = identifier;
+    }
+	
+	/**
+	 * @param cluster
+	 */
+    public void setCluster(Cluster cluster) {
+		
+        this.cluster = cluster;
+		
+        calculateEuclideanDistance();
+    }
+	
+	/**
+	 * @return x
+	 */
+    public double getX() {
+		
+        return this.x;
+    }
 
+	/**
+	 * @return y
+	 */
+    public double getY() {
+		
+        return this.y;
+    }
+
+	/**
+	 * @return identifier
+	 */
+    public double getIdentifier() {
+		
+        return this.identifier;
+    }
+
+	/**
+	 * @return cluster
+	 */
+    public double getCluster() {
+		
+        return this.cluster;
+    }
+
+	/**
+	 * @return euclideanDistance
+	 */
+    public double getEuclideanDistance() {
+		
+        return this.euclideanDistance;
+    }
+	
+	/**
+	 * Calculate the Euclidean distance.
+	 * Called when a new DataPoint instance is added to a Cluster,
+	 * or when the Centroid is recalculated.
+	 */
+    public void calculateEuclideanDistance() {
+		
+        euclideanDistance = Math.sqrt(
+			Math.pow((x - cluster.getCentroid().getX()), 2.0) +
+			Math.pow((y - cluster.getCentroid().getY()), 2.0));
+    }
+
+	/**
+	 * Test the Euclidean distance calculation method.
+	 *
+   	 * @param centroid
+   	 * @return euclideanDistance
+	 */
+    public double testEuclideanDistance(Centroid centroid) {
+		
+        return
+			Math.sqrt(Math.pow((getX() - getCentroid().getX()), 2.0) +
+			Math.pow((getY() - getCentroid().getY()), 2.0));
+    }
 }
-

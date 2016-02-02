@@ -12,7 +12,7 @@ The general aims are:
 * To demonstrate the use of Vectors and Iterators in Java.
 * To demonstrate the effectiveness and usefulness of the Java Math API.
 
-<hr>
+### Example
 
 ![Screenshot](https://raw.github.com/youldash/NCCC/master/misc/Before.png)
 100 DataPoint objects (before).
