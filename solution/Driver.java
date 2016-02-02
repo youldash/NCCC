@@ -71,9 +71,9 @@ final class Driver {
 		 */
 		public CelestialObject(String type, String name, double radius) {
 		
-			this.setType(type);
-			this.setName(name);
-			this.setRadius(radius);
+			setType(type);
+			setName(name);
+			setRadius(radius);
 		
 			/*
 			 * Real numbers are output to 2 decimal places using this DecimalFormat instance.
@@ -158,10 +158,10 @@ final class Driver {
 		 */
 		public Node(CelestialObject celestialObject) {
 		
-			this.setCelestialObject(celestialObject);
+			setCelestialObject(celestialObject);
 	
-			this.setNext(null);
-			this.setPrevious(null);
+			setNext(null);
+			setPrevious(null);
 		}
 
 		/**
@@ -228,10 +228,10 @@ final class Driver {
 		 */
 		public CollectionInSpace() {
 		
-			this.setSize(0);
+			setSize(0);
 		
-			this.setFront(null);
-			this.setBack(null);		
+			setFront(null);
+			setBack(null);		
 		}
 	
 		/**
@@ -312,7 +312,7 @@ final class Driver {
 			 */
 			if (this.isEmpty()) {
 			
-				this.setBack(node);
+				setBack(node);
 			}
 			else {
 		
@@ -321,7 +321,7 @@ final class Driver {
 				node.setNext(this.front);
 			}
 	    
-			this.setFront(node);
+			setFront(node);
 		
 			this.size++;
 		
@@ -347,7 +347,7 @@ final class Driver {
 			 */
 			if (this.isEmpty()) {
 
-				this.setFront(node);
+				setFront(node);
 			}
 			else {
 			
@@ -356,7 +356,7 @@ final class Driver {
 				node.setPrevious(this.back);
 			}
 
-			this.setBack(node);
+			setBack(node);
 		
 			this.size++;
 		
@@ -373,7 +373,7 @@ final class Driver {
 			if (this.getFront() == null)
 				return false;
 		
-			this.setFront(this.front.getNext());
+			setFront(this.front.getNext());
 		
 			this.size--;
 		
@@ -392,7 +392,7 @@ final class Driver {
 		
 			if (this.getFront().getNext() == null) {
 			
-				this.setFront(null);
+				setFront(null);
 			
 				return true;
 			}
@@ -428,7 +428,7 @@ final class Driver {
 		
 			if (this.getFront().getCelestialObject().getName().equalsIgnoreCase(object.getName())) {
 			
-				this.setFront(this.getFront().getNext());
+				setFront(this.getFront().getNext());
 			
 				this.size--;
 			
@@ -518,8 +518,8 @@ final class Driver {
 		 */
 		public Mass(double mantissa, int exponent) {
 		
-			this.setMantissa(mantissa);
-			this.setExponent(exponent);
+			setMantissa(mantissa);
+			setExponent(exponent);
 		}
 
 		/**
@@ -588,9 +588,9 @@ final class Driver {
 		
 			super(type, name, radius);
 		
-			this.setSpectrum(spectrum);
-			this.setBrightness(brightness);
-			this.setDistance(distance);
+			setSpectrum(spectrum);
+			setBrightness(brightness);
+			setDistance(distance);
 		}
 
 		/* (non-Javadoc)
@@ -758,8 +758,8 @@ final class Driver {
 				
 			this.mass = new Mass(mass.getMantissa(), mass.getExponent());
 		
-			this.setOrbitalPeriod(orbitalPeriod);
-			this.setTemperature(temperature);
+			setOrbitalPeriod(orbitalPeriod);
+			setTemperature(temperature);
 		}
 
 		/* (non-Javadoc)
@@ -861,8 +861,8 @@ final class Driver {
 				
 			this.mass = new Mass(mass.getMantissa(), mass.getExponent());
 		
-			this.setOrbit(orbit);
-			this.setTemperature(temperature);
+			setOrbit(orbit);
+			setTemperature(temperature);
 		}
 
 		/* (non-Javadoc)
