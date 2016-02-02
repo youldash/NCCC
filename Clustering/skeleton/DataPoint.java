@@ -165,8 +165,8 @@ public class DataPoint {
 	public void calculateEuclideanDistance() {
 		
 		euclideanDistance = Math.sqrt(
-			Math.pow((x - cluster.getCentroid().getX()), 2.0) +
-			Math.pow((y - cluster.getCentroid().getY()), 2.0));
+			Math.pow((getX() - cluster.getCentroid().getX()), 2.0) +
+			Math.pow((getY() - cluster.getCentroid().getY()), 2.0));
 	}
 
 	/**
