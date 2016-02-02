@@ -53,20 +53,20 @@ public class DataPoint {
 	/**
 	 * Variables.
 	 */
-    private double x, y;
-    private String identifier;
-    private Cluster cluster;
-    private double euclideanDistance;
+	private double x, y;
+	private String identifier;
+	private Cluster cluster;
+	private double euclideanDistance;
 	
 	/**
 	 * Default constructor.
 	 */
 	public DataPoint() {
 		
-        this.x = 0.0;
-        this.y = 0.0;
-        this.identifier = null;
-        this.cluster = null;
+		this.x = 0.0;
+		this.y = 0.0;
+		this.identifier = null;
+		this.cluster = null;
 	}
 	
 	/**
@@ -77,97 +77,97 @@ public class DataPoint {
 	 */
 	public DataPoint(double x, double y, String identifier, String, cluster) {
 		
-        this.x = 0.0;
-        this.y = 0.0;
-        this.identifier = null;
-        this.cluster = null;
+		this.x = 0.0;
+		this.y = 0.0;
+		this.identifier = null;
+		this.cluster = null;
 	}
 	
 	/**
 	 * @param x
 	 */
-    public void setX(double x) {
+	public void setX(double x) {
 		
-        this.x = x;
-    }
+		this.x = x;
+	}
 	
 	/**
 	 * @param y
 	 */
-    public void setY(double y) {
+	public void setY(double y) {
 		
-        this.y = y;
-    }
+		this.y = y;
+	}
 	
 	/**
 	 * @param identifier
 	 */
-    public void setIdentifier(String identifier) {
+	public void setIdentifier(String identifier) {
 		
-        this.identifier = identifier;
-    }
+		this.identifier = identifier;
+	}
 	
 	/**
 	 * @param cluster
 	 */
-    public void setCluster(Cluster cluster) {
+	public void setCluster(Cluster cluster) {
 		
-        this.cluster = cluster;
+		this.cluster = cluster;
 		
-        calculateEuclideanDistance();
-    }
+		calculateEuclideanDistance();
+	}
 	
 	/**
 	 * @return x
 	 */
-    public double getX() {
+	public double getX() {
 		
-        return this.x;
-    }
+		return this.x;
+	}
 
 	/**
 	 * @return y
 	 */
-    public double getY() {
+	public double getY() {
 		
-        return this.y;
-    }
+		return this.y;
+	}
 
 	/**
 	 * @return identifier
 	 */
-    public double getIdentifier() {
+	public double getIdentifier() {
 		
-        return this.identifier;
-    }
+		return this.identifier;
+	}
 
 	/**
 	 * @return cluster
 	 */
-    public double getCluster() {
+	public double getCluster() {
 		
-        return this.cluster;
-    }
+		return this.cluster;
+	}
 
 	/**
 	 * @return euclideanDistance
 	 */
-    public double getEuclideanDistance() {
+	public double getEuclideanDistance() {
 		
-        return this.euclideanDistance;
-    }
+		return this.euclideanDistance;
+	}
 	
 	/**
 	 * Calculate the Euclidean distance.
 	 * Called when a new DataPoint instance is added to a Cluster,
 	 * or when the Centroid is recalculated.
 	 */
-    public void calculateEuclideanDistance() {
+	public void calculateEuclideanDistance() {
 		
-        euclideanDistance = Math.sqrt(
+		euclideanDistance = Math.sqrt(
 			Math.pow((x - cluster.getCentroid().getX()), 2.0) +
 			Math.pow((y - cluster.getCentroid().getY()), 2.0));
-    }
+	}
 
 	/**
 	 * Test the Euclidean distance calculation method.
@@ -175,10 +175,10 @@ public class DataPoint {
    	 * @param centroid
    	 * @return euclideanDistance
 	 */
-    public double testEuclideanDistance(Centroid centroid) {
+	public double testEuclideanDistance(Centroid centroid) {
 		
-        return
+		return
 			Math.sqrt(Math.pow((getX() - getCentroid().getX()), 2.0) +
 			Math.pow((getY() - getCentroid().getY()), 2.0));
-    }
+	}
 }
