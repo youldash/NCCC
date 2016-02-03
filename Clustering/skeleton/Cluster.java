@@ -94,7 +94,7 @@ public class Cluster {
 	/**
 	 * @return sumOfSquares
 	 */
-	public double getSumOfSquares () {
+	public double getSumOfSquares() {
 		
 		return this.sumOfSquares;
 	}

@@ -34,6 +34,7 @@
 
 import java.lang.String;
 import java.util.Vector;
+import java.util.Iterator;
 
 /**
  * A class is the entry point for constructing clusters of DataPoint instances (using k-Means).
@@ -74,7 +75,7 @@ public class ClusteringAlgorithm {
 		
 		for (int i = 0; i < numberOfClusters; ++i) {
 			
-		    clusters[i] = new Cluster("Cluster[" + i + "]");
+			clusters[i] = new Cluster("Cluster[" + i + "]");
 		}
 		
 		// Set the other parameters.
@@ -83,10 +84,341 @@ public class ClusteringAlgorithm {
 	}
 	
 	/**
+	 * Calculate the Sum of Within-Cluster Sums of Squares.
+	 */
+	private void calculateSumOfWCSS() {
+		
+		// Establish a Sum of Within-Cluster Sums of Squares temp value.
+		double _sumOfWCSS = 0.0;
+				
+		// Loop through existing Cluster instances.
+		for (int i = 0; i < this.clusters.length; ++i) {
+		
+			// Accumulate it.
+			_sumOfWCSS += this.clusters[i].getSumOfSquares();
+		}
+	
+		// Save it.
+		setSumOfWCSS(_sumOfWCSS);
+	}
+	
+	/**
+	 * @return clusters (as a Vector instance)
+	 */
+	public Vector[] getClusters() {
+		
+		// Establish a temporal "clusters" collection.
+		Vector _clusters[] = new Vector[this.clusters.length];
+		
+		for (int i = 0; i < clusters.length; ++i) {
+			
+			// Copy each dataPoints from each Cluster instance.
+			_clusters[i] = clusters[i].getDataPoints();
+		}
+		
+		// Return it as an array of Vector.
+		return _clusters;
+	}
+	
+	/**
+	 * @param sumOfWCSS
+	 */
+	public void setSumOfWCSS(double sumOfWCSS) {
+		
+		this.sumOfWCSS = sumOfWCSS;
+	}
+	
+	/**
+	 *  Sets the starting (Initial) Centroid (x, y) coordinates - start of step 1.
+	 */
+	private void initializeCentroids() {
+		
+		/*
+		 * kn = (round((max - min) / k) * n) + min; where (n) = 0 to k - 1.
+		 */
+		double x = 0.0, y = 0.0;
+		
+		// Loop through each Cluster index in this Clustering Algorithm instance.
+		for (int idx = 1; idx <= clusters.length; ++idx) {
+			
+			// Recalculate both (x, y).
+			x = (((getXMAX() - getXMIN()) / (clusters.length + 1)) * idx) + getXMIN();
+			y = (((getYMAX() - getYMIN()) / (clusters.length + 1)) * idx) + getYMIN();
+			
+			// Establish a new Centroid.
+			Centroid centroid = new Centroid(x, y);
+			
+			// Update the Centroid (circular reference).
+			this.clusters[idx - 1].setCentroid(centroid);
+			
+			// Update its number to reflect the current Cluster number.
+			centroid.setCluster(this.clusters[idx - 1]);
+		}
+	}
+	
+	/**
+	 * @param index
+	 *
+	 * @return cluster
+	 */
+	public Cluster getCluster(int index) {
+		
+		return this.clusters[index];
+	}
+	
+	/**
+	 * @return numberOfIterations
+	 */
+	public int getNumberOfIterations() {
+		
+		return this.numberOfIterations;
+	}
+	
+	/**
+	 * @return dataPoints
+	 */
+	public Vector getDataPoints() {
+		
+		return this.dataPoints;
+	}
+	
+	/**
+	 * @return getNumberOfDataPoints
+	 */
+	public int getNumberOfDataPoints() {
+		
+		return getDataPoints().size();
+	}
+	
+	/**
+	 * @return sumOfWCSS
+	 */
+	public double getSumOfWCSS() {
+		
+		return this.sumOfWCSS;
+	}
+	
+	/**
+	 * @return x (MAX)
+	 */
+	public double getXMAX() {
+		
+		double x = ((DataPoint)getDataPoints().elementAt(0)).getX();
+		
+		for (int i = 0; i < getDataPoints().size(); ++i) {
+			
+			DataPoint point = (DataPoint)getDataPoints().elementAt(i);
+			
+			x = (point.getX() > x) ? point.getX() : x;
+		}
+		
+		return x;
+	}
+	
+	/**
+	 * @return y (MAX)
+	 */
+	public double getYMAX() {
+		
+		double y = ((DataPoint)getDataPoints().elementAt(0)).getY();
+		
+		for (int i = 0; i < getDataPoints().size(); ++i) {
+			
+			DataPoint point = (DataPoint)getDataPoints().elementAt(i);
+			
+			y = (point.getY() > y) ? point.getY() : y;
+		}
+		
+		return y;
+	}
+
+	/**
+	 * @return x (MIN)
+	 */
+	public double getXMIN() {
+		
+		double x = ((DataPoint)getDataPoints().elementAt(0)).getX();
+		
+		for (int i = 0; i < getDataPoints().size(); ++i) {
+			
+			DataPoint point = (DataPoint)getDataPoints().elementAt(i);
+			
+			x = (point.getX() < x) ? point.getX() : x;
+		}
+		
+		return x;
+	}
+
+	/**
+	 * @return y (MIN)
+	 */
+	public double getYMIN() {
+		
+		double y = ((DataPoint)getDataPoints().elementAt(0)).getY();
+		
+		for (int i = 0; i < getDataPoints().size(); ++i) {
+			
+			DataPoint point = (DataPoint)getDataPoints().elementAt(i);
+			
+			y = (point.getY() < y) ? point.getY() : y;
+		}
+		
+		return y;
+	}
+
+	/**
+	 * Invoke (or call) the k-Means Clustering algorithm.
+	 */
+	private void invoke() {
+		
+		// Set the starting (initial) Centroid (x, y) coordinates - start of step 1.
+		initializeCentroids();
+		
+		// Establish a DataPoint index.
+		int idx = 0;
+		
+		// Add a DataPoint instance to this cluster.
+		loop: while (true) {
+			
+			for (int i = 0; i < clusters.length; ++i) {
+				
+				// Add a DataPoint at (idx) to this Cluster.
+				clusters[i].addDataPoint((DataPoint)getDataPoints().elementAt(idx));
+				
+				// Move on.
+				idx++;
+				
+				// If we have reached capacity.
+				if (idx >= getDataPoints().size()) {
+					
+					break loop;
+				}
+			}
+		}
+		
+		// Calculate (E) for all the Cluster instances.
+		calculateSumOfWCSS();
+		
+		// Recalculate Cluster Centroids - start of step 2.
+		for (int i = 0; i < this.clusters.length; ++i) {
+			
+			this.clusters[i].getCentroid().calculate();
+		}
+		
+		// Recalculate (E) for all the clusters.
+		calculateSumOfWCSS();
+
+		// For each numberOfIterations.
+		for (int i = 0; i < getNumberOfIterations(); ++i) {
+			
+			// Enter the loop for each Cluster instance.
+			for (int j = 0; j < clusters.length; ++j) {
+				
+				// Pick the first element of the first cluster.
+				for (int k = 0; k < this.clusters[j].getNumberOfDataPoints(); ++k) {
+				
+					// Get the current Euclidean/Manhattan distance for Cluster[j].
+					double distance = this.clusters[j].getDataPoint(k).getEuclideanDistance();
+					
+					Cluster cluster = null;
+					boolean found = false;
+					
+					// Call the testEuclideanDistance() method for all Cluster instances.
+					for (int l = 0; l < clusters.length; l++) {
+						
+						// Check whether the last distance is > the present distance.
+						if (distance >
+							this.clusters[j].getDataPoint(k).testEuclideanDistance(this.clusters[l].getCentroid())) {
+							
+							// Record the Euclidean distance.
+							distance = this.clusters[j].getDataPoint(k).testEuclideanDistance(this.clusters[l].getCentroid());
+							
+							// Found!
+							cluster = clusters[l];
+							found = true;
+							
+						} // For (l) looping through different Clusters for matching a DataPoint.
+						
+					} //for variable 'l' - Looping between different Clusters for matching a Data Point.
+
+					// Add a DataPoint to the Cluster and execute calculateSumOfWCSS().
+					if (found) {
+						
+						cluster.addDataPoint(this.clusters[j].getDataPoint(k));
+						
+						this.clusters[j].removeDataPoint(clusters[j].getDataPoint(k));
+						
+						for (int m = 0; m < this.clusters.length; ++m) {
+							
+							this.clusters[m].getCentroid().calculate();
+							
+						} // For (m) recalculating centroids for all clusters.
+						
+						// Recalculate (E) for all the Clusters.
+						calculateSumOfWCSS();
+						
+					} // A DataPoint is found: is eligible for transfer between Clusters.
+					
+				} // For (k) looping through all DataPoint instances of the current Cluster.
+				
+			} // For (j) looping through all Clusters.
+			
+		} // For (i) numberOfIterations.
+	}
+	
+	/**
 	 * @param args (arguments passed via command prompt)
 	 */
 	public static void main(String[] args) {
 		
+		// TODO: Write code here that opens the file ClusteringAlgorithm.in, and print the Cluster output.
 		
+		/*
+		 * HINT: Replace the code in lines 380-394 with code that reads from file...
+		 */
+		
+		Vector dataPoints = new Vector();
+		
+		// Add dummy points.
+		dataPoints.add(new DataPoint(10.0, 10.0, "P1"));
+		dataPoints.add(new DataPoint(-10.0, -1.0, "Q1"));
+		dataPoints.add(new DataPoint(15.0, 12.0, "P2"));
+		dataPoints.add(new DataPoint(-5.0, -10.0, "Q2"));
+		dataPoints.add(new DataPoint(9.0, 30.0, "P3"));
+		dataPoints.add(new DataPoint(-7.5, -12.5, "Q3"));
+		
+		/*
+		 * At this stage we may expect two clusters:
+		 * - One for DataPoints with the identifier (P), and
+		 * - One for DataPoints with the identifier (Q)."
+		 */
+		
+		// Init the k-Means Clustering algorithm.
+		ClusteringAlgorithm kMeans = new ClusteringAlgorithm(2, 100, dataPoints);
+		
+		// Invoke k-Means.
+		kMeans.invoke();
+		
+		// Establish the current Cluster instances.
+		Vector[] clusters = kMeans.getClusters();
+		
+		// Loop through all the Clusters.
+		for (int i = 0; i < clusters.length; ++i){
+			
+			Vector _clusters = clusters[i];
+			
+			System.out.println("-- Cluster[" + i + "]:");
+			
+			Iterator iterator = _clusters.iterator();
+			
+			while (iterator.hasNext()){
+				
+				DataPoint point = (DataPoint)iterator.next();
+				
+				System.out.println(point.getIdentifier() + " (" +
+					point.getX() + ", " +
+					point.getY() + ")");
+			}
+		}
 	}
 }

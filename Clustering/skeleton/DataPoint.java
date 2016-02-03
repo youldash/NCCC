@@ -68,14 +68,13 @@ public class DataPoint {
 	 * @param x
 	 * @param y
 	 * @param identifier
-	 * @param cluster
 	 */
-	public DataPoint(double x, double y, String identifier, Cluster cluster) {
+	public DataPoint(double x, double y, String identifier) {
 		
 		// Pass the parameters.
-		this.x = 0.0;
-		this.y = 0.0;
-		this.identifier = null;
+		this.x = x;
+		this.y = y;
+		this.identifier = identifier;
 		this.cluster = null;
 	}
 	
