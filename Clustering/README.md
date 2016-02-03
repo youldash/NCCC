@@ -12,6 +12,8 @@ The general aims are:
 * To demonstrate the use of Vectors and Iterators in Java.
 * To demonstrate the effectiveness and usefulness of the Java Math API.
 
+**Content is being uploaded now...**
+
 ### Example
 
 ![Screenshot](https://raw.github.com/youldash/NCCC/master/misc/Before.png)

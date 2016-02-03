@@ -38,7 +38,7 @@ import java.util.Vector;
 /**
  * A Cluster (in the Cluster Analysis domain) relates to more than one DataPoint, and one Centroid.
  *
- * Class Cluster holds five variables:
+ * Class Cluster holds four variables:
  * - identifier (or name),
  * - centroid (reference of this Cluster),
  * - sumOfSquares, and
