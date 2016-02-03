@@ -35,12 +35,6 @@
 import java.lang.String;
 import java.lang.Math;
 
-"A typical DataPoint data structure represents a candidate for performing Cluster Analysis.
-In this example, a two-dimensional (2D) DataPoint contains .
-For example:
-In a  visualization space, data points are represented with (x,y).
-A DataPoint may also contain a name (which defines it), a reference to "
-
 /**
  * Class DataPoint holds five variables:
  * - two Cartesian (spacial) coordinates (x, y),
@@ -63,6 +57,7 @@ public class DataPoint {
 	 */
 	public DataPoint() {
 		
+		// Set the parameters.
 		this.x = 0.0;
 		this.y = 0.0;
 		this.identifier = null;
@@ -77,6 +72,7 @@ public class DataPoint {
 	 */
 	public DataPoint(double x, double y, String identifier, String, cluster) {
 		
+		// Pass the parameters.
 		this.x = 0.0;
 		this.y = 0.0;
 		this.identifier = null;
@@ -136,7 +132,7 @@ public class DataPoint {
 	/**
 	 * @return identifier
 	 */
-	public double getIdentifier() {
+	public String getIdentifier() {
 		
 		return this.identifier;
 	}
@@ -144,7 +140,7 @@ public class DataPoint {
 	/**
 	 * @return cluster
 	 */
-	public double getCluster() {
+	public Cluster getCluster() {
 		
 		return this.cluster;
 	}
@@ -177,8 +173,8 @@ public class DataPoint {
 	 */
 	public double testEuclideanDistance(Centroid centroid) {
 		
-		return
-			Math.sqrt(Math.pow((getX() - getCentroid().getX()), 2.0) +
+		return Math.sqrt(
+			Math.pow((getX() - getCentroid().getX()), 2.0) +
 			Math.pow((getY() - getCentroid().getY()), 2.0));
 	}
 }
