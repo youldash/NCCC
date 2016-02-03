@@ -92,8 +92,6 @@ public class Centroid {
 		setX(_x / numberOfDataPoints);
 		setY(_y / numberOfDataPoints);
 				
-		// System.out.println("(" + this.mCx + ", " + this.mCy +" )");
-		
 		for (int i = 0; i < numberOfDataPoints; ++i) {
 			
 			// Calculate the new Euclidean Distance for each DataPoint instance in the Cluster reference.
