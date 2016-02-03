@@ -64,7 +64,7 @@ public class Cluster {
 		// Pass the parameters.
 		this.identifier = identifier;
 		this.centroid = null; /* Will be set via setCentroid() at this stage. */
-        this.dataPoints = new Vector();
+		this.dataPoints = new Vector();
 	}
 	
 	/**
@@ -120,7 +120,7 @@ public class Cluster {
 	 */
     public int getNumberOfDataPoints() {
 		
-        return getDataPoints().size();
+		return getDataPoints().size();
     }
 	
 	/**
@@ -133,7 +133,7 @@ public class Cluster {
 		double _sumOfSquares = 0.0;
 	
 		// Loop through existing DataPoint instances within this Cluster.
-        for (int i = 0; i < size; ++i) {
+		for (int i = 0; i < size; ++i) {
 		
 			// Accumulate it.
 			_sumOfSquares += ((DataPoint)getDataPoints().elementAt(i)).getEuclideanDistance();
@@ -162,13 +162,13 @@ public class Cluster {
 	public void addDataPoint(DataPoint dataPoint) {
 		
 		/* This will trigger a call to calculateEuclideanDistance() in (DataPoint.java). */
-        dataPoint.setCluster(this);
+		dataPoint.setCluster(this);
 		
 		/* Add it locally. */
-        getDataPoints().addElement(dataPoint);
+		getDataPoints().addElement(dataPoint);
 		
 		/* Update sumOfSquares. */
-        calculateSumOfSquares();
+		calculateSumOfSquares();
 	}
 	
 	/**
@@ -179,9 +179,9 @@ public class Cluster {
 	public void removeDataPoint(DataPoint dataPoint) {
 		
 		/* Remove it. */
-        getDataPoints().removeElement(dataPoint);
+		getDataPoints().removeElement(dataPoint);
 		
 		/* Update sumOfSquares. */
-        calculateSumOfSquares();
+		calculateSumOfSquares();
 	}
 }
