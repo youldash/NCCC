@@ -86,7 +86,7 @@ public class Cluster {
 	/**
 	 * @return identifier
 	 */
-	public double getIdentifier() {
+	public String getIdentifier() {
 		
 		return this.identifier;
 	}
@@ -102,7 +102,7 @@ public class Cluster {
 	/**
 	 * @return centroid
 	 */
-	public double getCentroid() {
+	public Centroid getCentroid() {
 		
 		return this.centroid;
 	}
@@ -129,9 +129,12 @@ public class Cluster {
 	 */
 	public void calculateSumOfSquares() {
 		
-		// Establish the Sum of Squaress.
+		// Establish the Sum of Squares.
 		double _sumOfSquares = 0.0;
 	
+		// Establish the Sum of Squares.
+		int size = getDataPoints().size();
+		
 		// Loop through existing DataPoint instances within this Cluster.
 		for (int i = 0; i < size; ++i) {
 		

@@ -104,7 +104,7 @@ public class Centroid {
 	/**
 	 * @return cluster
 	 */
-	public double getCluster() {
+	public Cluster getCluster() {
 		
 		return this.cluster;
 	}
@@ -115,6 +115,22 @@ public class Centroid {
 	public void setCluster(Cluster cluster) {
 		
 		this.cluster = cluster;
+	}
+	
+	/**
+	 * @return x
+	 */
+	public double getX() {
+		
+		return this.x;
+	}
+
+	/**
+	 * @return y
+	 */
+	public double getY() {
+		
+		return this.y;
 	}
 	
 	/**

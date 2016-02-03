@@ -134,7 +134,7 @@ planet).
 
 ### Objectives
 
-While implementing your code, you may assume that user input is always correct, and files are correctly formatted. In reality however, this is **NOT** always the case as typical data sets can be stored in more-complex forms. For such cases *exception handling* are indeed helpful.
+While implementing your code, you may assume that user input is always correct, and files are correctly formatted. In reality however, this is **NOT** always the case as typical data sets can be stored in more-complex forms. For such cases *exception handling* is indeed helpful.
 
 #### Task 1: Project Structure
 

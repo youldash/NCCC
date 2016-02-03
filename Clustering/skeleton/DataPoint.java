@@ -70,7 +70,7 @@ public class DataPoint {
 	 * @param identifier
 	 * @param cluster
 	 */
-	public DataPoint(double x, double y, String identifier, String, cluster) {
+	public DataPoint(double x, double y, String identifier, Cluster cluster) {
 		
 		// Pass the parameters.
 		this.x = 0.0;
@@ -161,8 +161,8 @@ public class DataPoint {
 	public void calculateEuclideanDistance() {
 		
 		euclideanDistance = Math.sqrt(
-			Math.pow((getX() - cluster.getCentroid().getX()), 2.0) +
-			Math.pow((getY() - cluster.getCentroid().getY()), 2.0));
+			Math.pow((getX() - getCluster().getCentroid().getX()), 2.0) +
+			Math.pow((getY() - getCluster().getCentroid().getY()), 2.0));
 	}
 
 	/**
@@ -174,7 +174,7 @@ public class DataPoint {
 	public double testEuclideanDistance(Centroid centroid) {
 		
 		return Math.sqrt(
-			Math.pow((getX() - getCentroid().getX()), 2.0) +
-			Math.pow((getY() - getCentroid().getY()), 2.0));
+			Math.pow((getX() - centroid.getX()), 2.0) +
+			Math.pow((getY() - centroid.getY()), 2.0));
 	}
 }
