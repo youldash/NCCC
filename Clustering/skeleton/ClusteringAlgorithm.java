@@ -336,10 +336,9 @@ public class ClusteringAlgorithm {
 							// Found!
 							cluster = clusters[l];
 							found = true;
-							
-						} // For (l) looping through different Clusters for matching a DataPoint.
+						} 
 						
-					} //for variable 'l' - Looping between different Clusters for matching a Data Point.
+					} // For (l) looping through different Clusters for matching a DataPoint.
 
 					// Add a DataPoint to the Cluster and execute calculateSumOfWCSS().
 					if (found) {
