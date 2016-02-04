@@ -57,8 +57,21 @@ A [Cluster](https://en.wikipedia.org/wiki/Cluster_analysis), in the Exploratory 
 
 <!-- a set of one or more measurements on a single member of a statistical population or grouping. It it [also be referred to](http://whatis.techtarget.com/definition/data-point) as is a discrete unit of information (that could be mapped and displayed using a system of geometry). -->
 
-<hr>
+A [Cluster](https://raw.github.com/youldash/NCCC/master/Clustering/skeleton/DataPoint.java) class in this task, holds four variables:
 
+* identifier (or name),
+* centroid (see below),
+* sumOfSquares (double), and
+* dataPoints (collection). See below:
+
+| Parameter | Type |
+|:---------:|:----:|
+| identifier | String |
+| centroid | Centroid (see below) |
+| sumOfSquares | double |
+| dataPoints | Vector |
+
+<hr>
 
 ### Example
 

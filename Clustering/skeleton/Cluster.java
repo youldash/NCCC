@@ -40,7 +40,7 @@ import java.util.Vector;
  *
  * Class Cluster holds four variables:
  * - identifier (or name),
- * - centroid (reference of this Cluster),
+ * - centroid (reference),
  * - sumOfSquares, and
  * - dataPoints (as a collection or an array).
  */
@@ -63,7 +63,7 @@ public class Cluster {
 		
 		// Pass the parameters.
 		this.identifier = identifier;
-		this.centroid = null; /* Will be set via setCentroid() at this stage. */
+		this.centroid = null; /* Will be set later via setCentroid(). */
 		this.dataPoints = new Vector();
 	}
 	
