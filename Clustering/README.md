@@ -100,7 +100,7 @@ Information reported for <b>DataPoint</b> objects is stored in multiple lines (d
 See the following sample input:
 
 ```
-100
+6,
 2,
 10
 P1, 10.0, 10.0
