@@ -143,3 +143,11 @@ As shown, the output tells us that k-Means was executed successfully, and in tur
 
 * Identified by its 3 `DataPoint` objects: **Q1**, **Q2**, and **Q3**.
 * Grouped by calculating the `Centroid` object that belongs to this Cluster. Each of the three points were determined **CLOSER** to the Centroid based their `euclideanDistance` value from Centroid.
+
+### HINT
+
+To fully understand how the algorithm works, have a closer look at:**
+
+* The `initializeCentroids()` method of [ClusteringAlgorithm.java](https://raw.github.com/youldash/NCCC/master/Clustering/skeleton/ClusteringAlgorithm.java)
+* The `calculateSumOfWCSS()` method of [ClusteringAlgorithm.java](https://raw.github.com/youldash/NCCC/master/Clustering/skeleton/ClusteringAlgorithm.java)
+* The `invoke()` method of [ClusteringAlgorithm.java](https://raw.github.com/youldash/NCCC/master/Clustering/skeleton/ClusteringAlgorithm.java) (which forms the heart/engine of the algorithm).
