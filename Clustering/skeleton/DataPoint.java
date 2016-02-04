@@ -37,8 +37,8 @@ import java.lang.Math;
 
 /**
  * Class DataPoint holds five variables:
- * - two Cartesian (spacial) coordinates (x, y),
  * - identifier (or name),
+ * - two Cartesian (spacial) coordinates (x, y),
  * - Cluster (reference), and
  * - Euclidean distance (from Centroid).
  */

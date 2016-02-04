@@ -28,11 +28,36 @@ P2, 1.897, 1.989
 * The second parameter (after the first comma) is the "x" geometrical coordinate of the point.
 * The third parameter (after the second comma) is the "y" geometrical coordinate of the point. Both "x" and "y" coordinates are typically used for both mapping and visualization purposes. See below:
 
-| Parameter | Association |
-|:---------:|:-----------:|
+| Parameter | Value |
+|:---------:|:-----:|
 | identifier | P2 |
 | x | 1.897 |
 | y | 1.989 |
+
+A [DataPoint](https://raw.github.com/youldash/NCCC/master/Clustering/skeleton/DataPoint.java) class holds five variables:
+
+* identifier (or name),
+* two Cartesian (spacial) coordinates (x, y),
+* Cluster (reference), and
+* Euclidean distance (from Centroid). See below:
+
+| Parameter | Type |
+|:---------:|:----:|
+| identifier | String |
+| x | double |
+| y | double |
+| cluster | Cluster (see below) |
+| euclideanDistance | double (computed) |
+
+<hr>
+
+### Cluster
+
+A [Cluster](https://en.wikipedia.org/wiki/Cluster_analysis), in Machine Learning or Data Mining, refers to
+<!-- a set of one or more measurements on a single member of a statistical population or grouping. It it [also be referred to](http://whatis.techtarget.com/definition/data-point) as is a discrete unit of information (that could be mapped and displayed using a system of geometry). -->
+
+<hr>
+
 
 ### Example
 
