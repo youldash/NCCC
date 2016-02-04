@@ -39,8 +39,8 @@ A [DataPoint](https://raw.github.com/youldash/NCCC/master/Clustering/skeleton/Da
 
 * identifier (or name),
 * two Cartesian (spacial) coordinates (x, y),
-* Cluster (reference), and
-* Euclidean distance (from Centroid). See below:
+* cluster (reference), and
+* euclideanDistance (from Centroid). See below:
 
 | Parameter | Type |
 |:---------:|:----:|
@@ -56,8 +56,6 @@ A [DataPoint](https://raw.github.com/youldash/NCCC/master/Clustering/skeleton/Da
 
 A [Cluster](https://en.wikipedia.org/wiki/Cluster_analysis), in the Exploratory Data Mining and Machine Learning literature, refers to a grouping (or set) of DataPoint objects in such a manner that objects in the same cluster are more similar (in some sense or another) to each other than to those in other clusters.
 
-<!-- a set of one or more measurements on a single member of a statistical population or grouping. It it [also be referred to](http://whatis.techtarget.com/definition/data-point) as is a discrete unit of information (that could be mapped and displayed using a system of geometry). -->
-
 A [Cluster](https://raw.github.com/youldash/NCCC/master/Clustering/skeleton/DataPoint.java) class in this task (which is formed using k-Means and similar algorithms), holds four variables:
 
 * identifier (or name),
@@ -71,6 +69,23 @@ A [Cluster](https://raw.github.com/youldash/NCCC/master/Clustering/skeleton/Data
 | centroid | Centroid (see below) |
 | sumOfSquares | double |
 | dataPoints | Vector |
+
+<hr>
+
+### Centroid
+
+A [Centroid](https://en.wikipedia.org/wiki/Centroid) (or geometric center) refers to the mean (or middle) position of all the DataPoint objects in all of the coordinate directions (i.e. in both "x" and "y").
+
+A [Centroid](https://raw.github.com/youldash/NCCC/master/Clustering/skeleton/Centroid.java) class in this task (which is formed using k-Means and similar algorithms), holds three variables:
+
+* two Cartesian (spacial) coordinates (x, y), and
+* cluster (reference). See below:
+
+| Parameter | Type |
+|:---------:|:----:|
+| x | double |
+| y | double |
+| cluster | Cluster |
 
 <hr>
 
