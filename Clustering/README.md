@@ -113,7 +113,4 @@ Q3, -7.5, -12.5
 
 In this data set:
 * Line 1 defines the "size" of the DataPoint objects (that are to be created). Based on this attribute, the `getNumberOfDataPoints()` method of the ClusteringAlgorithm class **SHOULD** return this **EXACT** value. 
-<!-- * Line 2 is the "name" of the moon (hint: may be more than one word). -->
-<!-- * Line 3 is the "radius" of the moon (in kilometers). -->
-<!-- * Line 4 is the "mass" of the moon (in kilometers). This attribute contains the <b>mantissa</b>, and <b>exponent</b> of the moon's mass expressed in scientific notation. See the following description for Europa: -->
 
