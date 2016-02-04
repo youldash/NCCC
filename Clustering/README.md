@@ -14,6 +14,10 @@ The general aims are:
 
 **Content is being uploaded now (Thursday Feb 4th)...**
 
+### DataPoint
+
+A [DataPoint](https://en.wikipedia.org/wiki/Data_point)), in statistical terms, refers to a set of one or more measurements on a single member of a statistical population or grouping. It it [also be referred to](http://whatis.techtarget.com/definition/data-point) as is a discrete unit of information (that could be mapped and displayed using a system of geometry, e.g. X and Y in 2D).
+
 ### Example
 
 ![Screenshot](https://raw.github.com/youldash/NCCC/master/misc/Before.png)
