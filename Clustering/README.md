@@ -91,6 +91,29 @@ A [Centroid](https://raw.github.com/youldash/NCCC/master/Clustering/skeleton/Cen
 
 ### Objectives
 
-After you thoroughly inspect all four Java classes, you are hereby required to **JUST** modify [ClusteringAlgorithm.java](https://raw.github.com/youldash/NCCC/master/Clustering/skeleton/ClusteringAlgorithm.java) to **CORRECTLY** read from the [ClusteringAlgorithm.in](https://raw.github.com/youldash/NCCC/master/Clustering/skeleton/ClusteringAlgorithm.in) data set (text file), and then display the output in the standard console.
+After you thoroughly inspect (and fully understand) all four Java classes, you are hereby required to **ONLY** modify [ClusteringAlgorithm.java](https://raw.github.com/youldash/NCCC/master/Clustering/skeleton/ClusteringAlgorithm.java) to **CORRECTLY** read from the [ClusteringAlgorithm.in](https://raw.github.com/youldash/NCCC/master/Clustering/skeleton/ClusteringAlgorithm.in) data set (text file). Then, display the output in the standard console of NetBeans... Yep, as simple as that! :)
 
+#### Data Set: Input Format
+
+Information reported for <b>DataPoint</b> objects is stored in multiple lines (depending on the size of the data set -- which is typically defined by the number of DataPoint objects needed for the algorithm).
+
+See the following sample input:
+
+```
+100
+2,
+10
+P1, 10.0, 10.0
+Q1, -10.0, -1.0
+P2, 15.0, 12.0
+Q2, -5.0, -10.0
+P3, 9.0, 30.0
+Q3, -7.5, -12.5
+```
+
+In this data set:
+* Line 1 defines the "size" of the DataPoint objects (that are to be created). Based on this attribute, the `getNumberOfDataPoints()` method of the ClusteringAlgorithm class **SHOULD** return this **EXACT** value. 
+<!-- * Line 2 is the "name" of the moon (hint: may be more than one word). -->
+<!-- * Line 3 is the "radius" of the moon (in kilometers). -->
+<!-- * Line 4 is the "mass" of the moon (in kilometers). This attribute contains the <b>mantissa</b>, and <b>exponent</b> of the moon's mass expressed in scientific notation. See the following description for Europa: -->
 
