@@ -16,13 +16,23 @@ The general aims are:
 
 ### DataPoint
 
-A [DataPoint](https://en.wikipedia.org/wiki/Data_point)), in statistical terms, refers to a set of one or more measurements on a single member of a statistical population or grouping. It it [also be referred to](http://whatis.techtarget.com/definition/data-point) as is a discrete unit of information (that could be mapped and displayed using a system of geometry).
+A [DataPoint](https://en.wikipedia.org/wiki/Data_point), in statistical terms, refers to a set of one or more measurements on a single member of a statistical population or grouping. It it [also be referred to](http://whatis.techtarget.com/definition/data-point) as is a discrete unit of information (that could be mapped and displayed using a system of geometry).
 
-Information reported on a <b>DataPoint</b> is stored in 1 line. For example, a typical entry (record) looks like the following:
+In this task, information reported on a <b>DataPoint</b> is stored in 1 line. For example, a typical entry (record) looks like the following:
 
 ```
 P2, 1.897, 1.989
 ```
+
+* The first parameter (before the comma) is an "identifier" (or name) of the point.
+* The second parameter (after the first comma) is the "x" geometrical coordinate of the point.
+* The third parameter (after the second comma) is the "y" geometrical coordinate of the point. Both "x" and "y" coordinates are typically used for both mapping and visualization purposes. See below:
+
+| Parameter | Association |
+|:---------:|:-----------:|
+| identifier | P2 |
+| x | 1.897 |
+| y | 1.989 |
 
 ### Example
 
