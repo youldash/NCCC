@@ -146,7 +146,7 @@ As shown, the output tells us that k-Means was executed successfully, and in tur
 
 ### HINT
 
-To fully understand how the algorithm works, have a closer look at:**
+To fully understand how the algorithm works, have a closer look at:
 
 * The `initializeCentroids()` method of [ClusteringAlgorithm.java](https://raw.github.com/youldash/NCCC/master/Clustering/skeleton/ClusteringAlgorithm.java)
 * The `calculateSumOfWCSS()` method of [ClusteringAlgorithm.java](https://raw.github.com/youldash/NCCC/master/Clustering/skeleton/ClusteringAlgorithm.java)
