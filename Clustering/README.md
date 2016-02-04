@@ -136,6 +136,10 @@ As shown, the output tells us that k-Means was executed successfully, and in tur
 
 ##### Cluster[0]
 
-
+* Identified by its 3 `DataPoint` objects: **P1**, **P2**, and **P3**.
+* Grouped by calculating the `Centroid` object that belongs to this Cluster. Each of the three points were determined **CLOSER** to the Centroid based their `euclideanDistance` value from Centroid.
 
 ##### Cluster[1]
+
+* Identified by its 3 `DataPoint` objects: **Q1**, **Q2**, and **Q3**.
+* Grouped by calculating the `Centroid` object that belongs to this Cluster. Each of the three points were determined **CLOSER** to the Centroid based their `euclideanDistance` value from Centroid.
