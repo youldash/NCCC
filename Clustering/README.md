@@ -113,5 +113,6 @@ Q3, -7.5, -12.5
 
 In this data set:
 * Line 1 defines the "size" of the DataPoint objects (that are to be created). Based on this attribute, the `getNumberOfDataPoints()` method of the ClusteringAlgorithm class **SHOULD** return this **EXACT** value. 
-* Line 2 defines the `numberOfIterations` for the ClusteringAlgorithm class. In particular, it specifies the "Number of Iterations" of the k-Means Clustering algorithm. The accuracy of such an algorithm is bound by such a parameter.
+* Line 2 defines the `numberOfClusters` needed for ClusteringAlgorithm class. In particular, it specifies the "Number of Clusters" needed for the k-Means Clustering algorithm to work. In this given example, the number is two: One for **P**-labelled points, and another for **Q**-labelled points.
+* Line 3 defines the `numberOfIterations` for the ClusteringAlgorithm class. In particular, it specifies the "Number of Iterations" needed for the k-Means Clustering algorithm to work. The accuracy of such an algorithm is bound by such a parameter.
 
