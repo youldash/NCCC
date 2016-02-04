@@ -50,7 +50,7 @@ class Matrices {
 	 * An Exception class.
 	 * Thrown when an invalid matrix manipulation (operation) is ever attempted.
 	 */
-	private class InvalidMatrixCalculationException extends RuntimeException {
+	private static class InvalidMatrixCalculationException extends RuntimeException {
 		
 		/**
 		 * Default constructor.
@@ -68,7 +68,11 @@ class Matrices {
 	 */
 	public static void main(String[] args) {
 				
-		// ...
+		// Test.
+		if (true) {
+			
+			throw new InvalidMatrixCalculationException("Invalid matrix calculation.");
+		}
 	}
 }
 
