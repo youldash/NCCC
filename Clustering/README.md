@@ -16,7 +16,13 @@ The general aims are:
 
 ### DataPoint
 
-A [DataPoint](https://en.wikipedia.org/wiki/Data_point)), in statistical terms, refers to a set of one or more measurements on a single member of a statistical population or grouping. It it [also be referred to](http://whatis.techtarget.com/definition/data-point) as is a discrete unit of information (that could be mapped and displayed using a system of geometry, e.g. X and Y in 2D).
+A [DataPoint](https://en.wikipedia.org/wiki/Data_point)), in statistical terms, refers to a set of one or more measurements on a single member of a statistical population or grouping. It it [also be referred to](http://whatis.techtarget.com/definition/data-point) as is a discrete unit of information (that could be mapped and displayed using a system of geometry).
+
+Information reported on a <b>DataPoint</b> is stored in 1 line. For example, a typical entry (record) looks like the following:
+
+```
+P2, 1.897, 1.989
+```
 
 ### Example
 
