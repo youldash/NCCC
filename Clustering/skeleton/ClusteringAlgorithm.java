@@ -398,12 +398,13 @@ public class ClusteringAlgorithm {
 		// Invoke k-Means.
 		kMeans.invoke();
 		
-		// Establish the current Cluster instances.
+		// Establish the current Clusters (as an array of Vector).
 		Vector[] clusters = kMeans.getClusters();
 		
-		// Loop through all the Clusters.
+		// Loop through all the Cluster sets.
 		for (int i = 0; i < clusters.length; ++i){
 			
+			// Establish the current Cluster instances (as a Vector of Clusters).
 			Vector _clusters = clusters[i];
 			
 			System.out.println("-- Cluster[" + i + "]:");

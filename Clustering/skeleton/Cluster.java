@@ -110,7 +110,7 @@ public class Cluster {
 	/**
 	 * @return dataPoints
 	 */
-	public Vector getDataPoints () {
+	public Vector getDataPoints() {
 		
 		return this.dataPoints;
 	}
