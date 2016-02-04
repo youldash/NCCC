@@ -12,7 +12,8 @@ The general aims are:
 * To demonstrate the use of Vectors and Iterators in Java.
 * To demonstrate the effectiveness and usefulness of the Java Math API.
 
-**Content is being uploaded now (Thursday Feb 4th)...**
+![Screenshot](https://raw.github.com/youldash/NCCC/master/misc/cIDB3.png)
+[Source](http://i.stack.imgur.com/cIDB3.png)
 
 ### DataPoint
 
@@ -52,9 +53,6 @@ A [DataPoint](https://raw.github.com/youldash/NCCC/master/Clustering/skeleton/Da
 <hr>
 
 ### Cluster
-
-![Screenshot](https://raw.github.com/youldash/NCCC/master/misc/cIDB3.png)
-[Source](http://i.stack.imgur.com/cIDB3.png)
 
 A [Cluster](https://en.wikipedia.org/wiki/Cluster_analysis), in the Exploratory Data Mining and Machine Learning literature, refers to a grouping (or set) of DataPoint objects in such a manner that objects in the same cluster are more similar (in some sense or another) to each other than to those in other clusters.
 
