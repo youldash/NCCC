@@ -76,6 +76,6 @@ A [Cluster](https://raw.github.com/youldash/NCCC/master/Clustering/skeleton/Data
 
 ### Objectives
 
-After you thoroughly inspect all four Java classes, you are hereby required to **JUST** modify [ClusteringAlgorithm.java](https://raw.github.com/youldash/NCCC/master/Clustering/skeleton/ClusteringAlgorithm.java) to **CORRECTLY** read from the [ClusteringAlgorithm.in](https://raw.github.com/youldash/NCCC/master/Clustering/skeleton/ClusteringAlgorithm.java) data set (text file), and then display the output in the standard console.
+After you thoroughly inspect all four Java classes, you are hereby required to **JUST** modify [ClusteringAlgorithm.java](https://raw.github.com/youldash/NCCC/master/Clustering/skeleton/ClusteringAlgorithm.java) to **CORRECTLY** read from the [ClusteringAlgorithm.in](https://raw.github.com/youldash/NCCC/master/Clustering/skeleton/ClusteringAlgorithm.in) data set (text file), and then display the output in the standard console.
 
 
