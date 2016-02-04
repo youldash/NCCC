@@ -115,4 +115,20 @@ In this data set:
 * Line 1 defines the "size" of the DataPoint objects (that are to be created). Based on this attribute, the `getNumberOfDataPoints()` method of the ClusteringAlgorithm class **SHOULD** return this **EXACT** value. 
 * Line 2 defines the `numberOfClusters` needed for ClusteringAlgorithm class. In particular, it specifies the "Number of Clusters" needed for the k-Means Clustering algorithm to work. In this given example, the number is **DELIBERATELY** set to 2: One for **P**-labelled points, and another for **Q**-labelled points.
 * Line 3 defines the `numberOfIterations` for the ClusteringAlgorithm class. In particular, it specifies the "Number of Iterations" needed for the k-Means Clustering algorithm to work. The accuracy of such an algorithm is bound by such a parameter.
+* Lines 4-9 define each `DataPoint` instance. As you created new instances, you define each attribute based on the description that is explained above (under **DataPoint**).
+
+#### ClusteringAlgorithm.java: Sample Output
+
+After you create your project and import all four classes of this task (all are listed in [skeleton code](https://github.com/youldash/NCCC/blob/master/Clustering/skeleton/)), you should be able to obtain a similar console output:
+
+```
+---- Cluster[0]
+P1 (10.0, 10.0)
+P2 (15.0, 12.0)
+P3 (9.0, 30.0)
+---- Cluster[1]
+Q1 (-10.0, -1.0)
+Q2 (-5.0, -10.0)
+Q3 (-7.5, -12.5)
+```
 
