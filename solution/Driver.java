@@ -955,6 +955,7 @@ final class Driver {
 	private void importData() {
 		
 		try {
+			
 			inFile = new File(INFILE);
 			FileInputStream fis = new FileInputStream(inFile);
 			
@@ -963,7 +964,7 @@ final class Driver {
 
 			/*
 			 * Checksum: see whether the collection object is already loaded with data from the
-			 * binary file as per assignment requirements.
+			 * text file as per assignment requirements.
 			 * If this is the case, then it is better that we reset the collection.
 			 */
 			if (!collection.isEmpty()) {
@@ -997,12 +998,12 @@ final class Driver {
 						if (type.equalsIgnoreCase("Star")) {
 							
 							CelestialObject star = new Star(
-									"Star",
-									scanner.nextLine().trim(),
-									Double.parseDouble(scanner.nextLine().trim()),
-									scanner.nextLine().trim().charAt(0),
-									scanner.nextLine().trim(),
-									Double.parseDouble(scanner.nextLine().trim()));
+								"Star",
+								scanner.nextLine().trim(),
+								Double.parseDouble(scanner.nextLine().trim()),
+								scanner.nextLine().trim().charAt(0),
+								scanner.nextLine().trim(),
+								Double.parseDouble(scanner.nextLine().trim()));
 							
 							collection.append(star);
 														
@@ -1028,12 +1029,12 @@ final class Driver {
 							int temperature = Integer.parseInt(scanner.nextLine().trim());
 							
 							CelestialObject planet = new Planet(
-									"Planet",
-									name,
-									radius,
-									new Mass(mantissa, exponent),
-									orbitalPeriod,
-									temperature);
+								"Planet",
+								name,
+								radius,
+								new Mass(mantissa, exponent),
+								orbitalPeriod,
+								temperature);
 							
 							collection.append(planet);
 							
@@ -1059,12 +1060,12 @@ final class Driver {
 							int temperature = Integer.parseInt(scanner.nextLine().trim());
 							
 							CelestialObject moon = new Moon(
-									"Moon",
-									name,
-									radius,
-									new Mass(mantissa, exponent),
-									orbit,
-									temperature);
+								"Moon",
+								name,
+								radius,
+								new Mass(mantissa, exponent),
+								orbit,
+								temperature);
 							
 							collection.append(moon);
 							
