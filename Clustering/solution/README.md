@@ -1,5 +1,20 @@
 # NCCC Supplementary Material
 
+## Output from TestDataSet.in
+
+```
+Loading... Complete.
+Collection (dataPoints) size after importation 6.
+---- Cluster[0]
+P1 (10.00, 10.00)
+P2 (15.00, 12.00)
+P3 (9.00, 30.00)
+---- Cluster[1]
+Q1 (-10.00, -1.00)
+Q2 (-5.00, -10.00)
+Q3 (-7.50, -12.50)
+```
+
 ## Output from ClusteringAlgorithm.in
 
 ```
