@@ -53,7 +53,7 @@ A [DataPoint](https://raw.github.com/youldash/NCCC/master/Clustering/skeleton/Da
 
 ### Cluster
 
-![Screenshot](https://raw.github.com/youldash/NCCC/master/misc/Before.png)
+![Screenshot](https://raw.github.com/youldash/NCCC/master/misc/cIDB3.png)
 [Source](http://i.stack.imgur.com/cIDB3.png)
 
 A [Cluster](https://en.wikipedia.org/wiki/Cluster_analysis), in the Exploratory Data Mining and Machine Learning literature, refers to a grouping (or set) of DataPoint objects in such a manner that objects in the same cluster are more similar (in some sense or another) to each other than to those in other clusters.
