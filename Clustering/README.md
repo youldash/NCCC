@@ -53,11 +53,14 @@ A [DataPoint](https://raw.github.com/youldash/NCCC/master/Clustering/skeleton/Da
 
 ### Cluster
 
+![Screenshot](https://raw.github.com/youldash/NCCC/master/misc/Before.png)
+[Source](http://i.stack.imgur.com/cIDB3.png)
+
 A [Cluster](https://en.wikipedia.org/wiki/Cluster_analysis), in the Exploratory Data Mining and Machine Learning literature, refers to a grouping (or set) of DataPoint objects in such a manner that objects in the same cluster are more similar (in some sense or another) to each other than to those in other clusters.
 
 <!-- a set of one or more measurements on a single member of a statistical population or grouping. It it [also be referred to](http://whatis.techtarget.com/definition/data-point) as is a discrete unit of information (that could be mapped and displayed using a system of geometry). -->
 
-A [Cluster](https://raw.github.com/youldash/NCCC/master/Clustering/skeleton/DataPoint.java) class in this task, holds four variables:
+A [Cluster](https://raw.github.com/youldash/NCCC/master/Clustering/skeleton/DataPoint.java) class in this task (which is formed using k-Means and similar algorithms), holds four variables:
 
 * identifier (or name),
 * centroid (see below),
@@ -72,11 +75,3 @@ A [Cluster](https://raw.github.com/youldash/NCCC/master/Clustering/skeleton/Data
 | dataPoints | Vector |
 
 <hr>
-
-### Example
-
-![Screenshot](https://raw.github.com/youldash/NCCC/master/misc/Before.png)
-100 DataPoint objects (before).
-
-![Screenshot](https://raw.github.com/youldash/NCCC/master/misc/After.png)
-4 Clusters (25 DataPoint objects each) after running the program.
