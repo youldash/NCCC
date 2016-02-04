@@ -53,7 +53,8 @@ A [DataPoint](https://raw.github.com/youldash/NCCC/master/Clustering/skeleton/Da
 
 ### Cluster
 
-A [Cluster](https://en.wikipedia.org/wiki/Cluster_analysis), in Machine Learning or Data Mining, refers to
+A [Cluster](https://en.wikipedia.org/wiki/Cluster_analysis), in the Exploratory Data Mining and Machine Learning literature, refers to a grouping (or set) of DataPoint objects in such a manner that objects in the same cluster are more similar (in some sense or another) to each other than to those in other clusters.
+
 <!-- a set of one or more measurements on a single member of a statistical population or grouping. It it [also be referred to](http://whatis.techtarget.com/definition/data-point) as is a discrete unit of information (that could be mapped and displayed using a system of geometry). -->
 
 <hr>
