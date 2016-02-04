@@ -115,7 +115,7 @@ In this data set:
 * Line 1 defines the "size" of the DataPoint objects (that are to be created). Based on this attribute, the `getNumberOfDataPoints()` method of the ClusteringAlgorithm class **SHOULD** return this **EXACT** value. 
 * Line 2 defines the `numberOfClusters` needed for ClusteringAlgorithm class. In particular, it specifies the "Number of Clusters" needed for the k-Means Clustering algorithm to work. In this given example, the number is **DELIBERATELY** set to 2: One for **P**-labelled points, and another for **Q**-labelled points.
 * Line 3 defines the `numberOfIterations` for the ClusteringAlgorithm class. In particular, it specifies the "Number of Iterations" needed for the k-Means Clustering algorithm to work. The accuracy of such an algorithm is bound by such a parameter.
-* Lines 4-9 define each `DataPoint` instance. As you created new instances, you define each attribute based on the description that is explained above (under **DataPoint**).
+* Lines 4-9 define each `DataPoint` entry. As you created new instances, you define each attribute based on the description that is explained above (under **DataPoint**).
 
 #### ClusteringAlgorithm.java: Sample Output
 
@@ -132,3 +132,10 @@ Q2 (-5.0, -10.0)
 Q3 (-7.5, -12.5)
 ```
 
+As shown, the output tells us that k-Means was executed successfully, and in turn was able to cluster all 6 `DataPoint` objects into two DISTINCT groups:
+
+##### Cluster[0]
+
+
+
+##### Cluster[1]
