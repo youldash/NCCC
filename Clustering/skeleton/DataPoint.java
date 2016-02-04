@@ -78,6 +78,17 @@ public class DataPoint {
 		this.cluster = null;
 	}
 	
+	/* (non-Javadoc)
+	 * @see CelestialObject#toString()
+	 */
+	@Override
+	public String toString() {
+	
+		return getIdentifier() + " (" +
+			getX() + ", " +
+			getY() + ")";
+	}
+	
 	/**
 	 * @param x
 	 */

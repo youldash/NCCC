@@ -373,7 +373,7 @@ public class ClusteringAlgorithm {
 		// TODO: Write code here that opens the file ClusteringAlgorithm.in, and print the Cluster output.
 		
 		/*
-		 * HINT: Replace the code in lines 380-394 with code that reads from file...
+		 * HINT: Replace the code in lines 379-394 with your code that should read from file...
 		 */
 		
 		Vector dataPoints = new Vector();
@@ -407,17 +407,19 @@ public class ClusteringAlgorithm {
 			// Establish the current Cluster instances (as a Vector of Clusters).
 			Vector _clusters = clusters[i];
 			
-			System.out.println("-- Cluster[" + i + "]:");
+			// Display (print) all Cluster identifiers.
+			System.out.println("---- " + kMeans.getCluster(i).getIdentifier());
 			
+			// Display (print) all Cluster DataPoints.
 			Iterator iterator = _clusters.iterator();
 			
 			while (iterator.hasNext()){
 				
+				// Get the current DataPoint.
 				DataPoint point = (DataPoint)iterator.next();
 				
-				System.out.println(point.getIdentifier() + " (" +
-					point.getX() + ", " +
-					point.getY() + ")");
+				// Display it.
+				System.out.println(point.toString());
 			}
 		}
 	}
