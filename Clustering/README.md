@@ -37,10 +37,10 @@ P2, 1.897, 1.989
 
 A [DataPoint](https://raw.github.com/youldash/NCCC/master/Clustering/skeleton/DataPoint.java) class holds five variables:
 
-* identifier (or name),
-* two Cartesian (spacial) coordinates (x, y),
-* cluster (reference), and
-* euclideanDistance (from Centroid). See below:
+* `identifier` (or name),
+* two Cartesian (spacial) coordinates `(x, y)`,
+* `cluster` (reference), and
+* `euclideanDistance` (from Centroid). See below:
 
 | Parameter | Type |
 |:---------:|:----:|
@@ -58,10 +58,10 @@ A [Cluster](https://en.wikipedia.org/wiki/Cluster_analysis), in the Exploratory 
 
 A [Cluster](https://raw.github.com/youldash/NCCC/master/Clustering/skeleton/DataPoint.java) class in this task (which is formed using k-Means and similar algorithms), holds four variables:
 
-* identifier (or name),
-* centroid (see below),
-* sumOfSquares (double), and
-* dataPoints (collection). See below:
+* `identifier` (or name),
+* `centroid` (see below),
+* `sumOfSquares` (double), and
+* `dataPoints` (collection). See below:
 
 | Parameter | Type |
 |:---------:|:----:|
@@ -78,8 +78,8 @@ A [Centroid](https://en.wikipedia.org/wiki/Centroid) (or geometric center) refer
 
 A [Centroid](https://raw.github.com/youldash/NCCC/master/Clustering/skeleton/Centroid.java) class in this task (which is formed using k-Means and similar algorithms), holds three variables:
 
-* two Cartesian (spacial) coordinates (x, y), and
-* cluster (reference). See below:
+* two Cartesian (spacial) coordinates `(x, y)`, and
+* `cluster` (reference). See below:
 
 | Parameter | Type |
 |:---------:|:----:|
