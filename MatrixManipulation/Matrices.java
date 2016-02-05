@@ -30,7 +30,12 @@
 
 import java.lang.RuntimeException;
 import java.lang.String;
+import java.lang.Math;
 import java.text.DecimalFormat;
+import java.util.NoSuchElementException;
+import java.util.Scanner;
+import java.util.Locale;
+import java.util.StringTokenizer;
 import java.io.*;
 
 /**
@@ -39,6 +44,15 @@ import java.io.*;
  * Created using TextMate version 2.0 on a Mac OS X 10.10.5 system.
  */
 class Matrices {
+	
+	/**
+	 * Properties.
+	 */
+	static final boolean DEBUG = true;
+	static final String INFILE = "Matrices.in";
+	
+	static File inFile;
+	static Scanner scanner;
 	
 	/**
 	 * Default constructor.
@@ -376,12 +390,7 @@ class Matrices {
 		
 		System.out.println("");
 	}
-	
-	/**
-	 * Properties.
-	 */
-	static final boolean DEBUG = true;
-	
+		
 	/**
 	 * Matrix addition test method.
 	 *
@@ -412,6 +421,81 @@ class Matrices {
 		
 		// Passed.
 		return true;
+	}
+	
+	/**
+	 * Read form a text file. User input is NOT required.
+	 */
+	static void importData() {
+		
+		System.out.println("---- Matrices.in:");
+		try {
+		
+			inFile = new File(INFILE);
+			FileInputStream fis = new FileInputStream(inFile);
+		
+			scanner = new Scanner(fis);
+			scanner.useLocale(Locale.US);
+		
+			/*
+			 * Read the data file.
+			 */
+			if (fis != null) {
+			
+				if (DEBUG)
+					System.out.println("Loading...");
+			
+				try {
+				
+					while (scanner.hasNextLine()) {
+				
+						StringTokenizer tokenizer = new StringTokenizer(scanner.nextLine().trim());
+											
+						while (tokenizer.hasMoreTokens()) {
+						
+							System.out.println(Double.parseDouble(tokenizer.nextToken().trim()));
+						}
+					}					
+				}
+				catch (NoSuchElementException e) {
+				
+					e.printStackTrace();
+				}
+				catch (NumberFormatException e) {
+				
+					e.printStackTrace();
+				}
+				finally {
+										
+					if (DEBUG)
+						System.out.println("Complete.");
+						
+					if (fis != null)
+						fis.close();
+					fis = null;
+				
+					if (scanner != null)
+						scanner.close();
+					scanner = null;
+				}
+			}			
+		}
+		catch (FileNotFoundException e) {
+		
+			e.printStackTrace();
+		}
+		catch (EOFException e) {
+		
+			e.printStackTrace();							
+		}
+		catch (StreamCorruptedException e) {
+		
+			e.printStackTrace();
+		}
+		catch (IOException e) {
+		
+			e.printStackTrace();
+		}
 	}
 	
 	/**
@@ -469,6 +553,7 @@ class Matrices {
 				
 				System.out.println("PASSED.");
 			}
+			System.out.println();
 			
 			/*
 			 * Test subtract().
@@ -478,6 +563,12 @@ class Matrices {
 				
 				System.out.println("PASSED.");
 			}
+			System.out.println();
+			
+			/*
+			 * Read from INFILE.
+			 */
+			Matrices.importData();
 		}
 	}
 }
