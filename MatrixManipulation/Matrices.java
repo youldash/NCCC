@@ -383,6 +383,38 @@ class Matrices {
 	static final boolean DEBUG = true;
 	
 	/**
+	 * Matrix addition test method.
+	 *
+	 * @param left double[][] matrix of values
+	 * @param right	double[][] matrix of values
+	 * @return a boolean value that indicates whether all the tests were successful or not
+	 */
+	static boolean testAdd(double[][] left, double[][] right) {
+		
+		// Log the result matrix.
+		Matrices.log(Matrices.add(left, right));
+		
+		// Passed.
+		return true;
+	}
+	
+	/**
+	 * Matrix subtraction test method.
+	 *
+	 * @param left double[][] matrix of values
+	 * @param right	double[][] matrix of values
+	 * @return a boolean value that indicates whether all the tests were successful or not
+	 */
+	static boolean testSubtract(double[][] left, double[][] right) {
+		
+		// Log the result matrix.
+		Matrices.log(Matrices.subtract(left, right));
+		
+		// Passed.
+		return true;
+	}
+	
+	/**
 	 * @param args (arguments passed via command prompt)
 	 */
 	public static void main(String[] args) {
@@ -428,7 +460,24 @@ class Matrices {
 			System.out.println("LARGE.length = " + LARGE.length);
 			System.out.println("LARGE[0].length = " + LARGE[0].length);
 			System.out.println();
+			
+			/*
+			 * Test add().
+			 */
+			System.out.println("---- testAdd():");
+			if (Matrices.testAdd(SMALL, SMALL)) {
+				
+				System.out.println("PASSED.");
+			}
+			
+			/*
+			 * Test subtract().
+			 */
+			System.out.println("---- testSubtract():");
+			if (Matrices.testSubtract(SMALL, SMALL)) {
+				
+				System.out.println("PASSED.");
+			}
 		}
 	}
 }
-
