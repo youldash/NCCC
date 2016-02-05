@@ -29,6 +29,8 @@
  */
 
 import java.lang.RuntimeException;
+import java.lang.String;
+import java.text.DecimalFormat;
 import java.io.*;
 
 /**
@@ -41,37 +43,391 @@ class Matrices {
 	/**
 	 * Default constructor.
 	 */
-	public Matrices() {
-		
-		// ...
-	}
+	public Matrices() {}
 	
 	/**
 	 * An Exception class.
 	 * Thrown when an invalid matrix manipulation (operation) is ever attempted.
 	 */
-	private static class InvalidMatrixCalculationException extends RuntimeException {
+	private static class InvalidCalculationException extends RuntimeException {
 		
 		/**
 		 * Default constructor.
 		 * 
 		 * @param message
 		 */
-		public InvalidMatrixCalculationException(String message) {
+		public InvalidCalculationException(String message) {
 		
 			super(message);
-		}	
+		}
 	}
+	
+	/**
+	 * Return the sum of the (left + right) operation.
+	 *
+	 * @param left double[][] matrix of values
+	 * @param right	double[][] matrix of values
+	 * @return the matrix difference (left + right)
+	 */
+	static double[][] add(double[][] left, double[][] right) {
+		
+		if (left.length != right.length ||
+			left[0].length != right[0].length) {
+			
+			throw new InvalidCalculationException("Invalid operation: Matrices are not compatible!");
+		}
+		
+		// Establish the result matrix.
+		double[][] result = new double[left.length][left[0].length];
+		
+		for (int i = 0; i < result.length; ++i) {
+			
+			for (int j = 0; j < result[0].length; ++j) {
+				
+				// Perform the operation.
+				result[i][j] = left[i][j] + right[i][j];
+			}
+		}
+		
+		// Return it.
+		return result;
+	}
+	
+	/**
+	 * Return the difference of the (left - right) operation.
+	 *
+	 * @param left double[][] matrix of values
+	 * @param right	double[][] matrix of values
+	 * @return the matrix difference (left - right)
+	 */
+	static double[][] subtract(double[][] left, double[][] right) {
+		
+		if (left.length != right.length ||
+			left[0].length != right[0].length) {
+			
+			throw new InvalidCalculationException("Invalid operation: Matrices are not compatible!");
+		}
+		
+		// Establish the result matrix.
+		double[][] result = new double[left.length][left[0].length];
+		
+		for (int i = 0; i < result.length; ++i) {
+			
+			for (int j = 0; j < result[0].length; ++j) {
+				
+				// Perform the operation.
+				result[i][j] = left[i][j] - right[i][j];
+			}
+		}
+		
+		// Return it.
+		return result;
+	}
+	
+	/**
+	 * Return the product of the (left * right) operation.
+	 * Note that if the "horizontal" length of the left matrix is not equal to
+	 * the "vertical" length of the right matrix, then an exception is thrown.
+	 *
+	 * @param left double[][] matrix of values
+	 * @param right	double[][] matrix of values
+	 * @return the matrix product (left * right)
+	 */
+	static double[][] multiply(double[][] left, double[][] right) {
+		
+		if (left.length != right[0].length) {
+			
+			throw new InvalidCalculationException("Invalid operation: Matrices are not compatible!");
+		}
+		
+		// Establish the result matrix.
+		double[][] result = new double[right.length][left[0].length];
+		
+		for (int i = 0; i < result.length; ++i) {
+			
+			for (int j = 0; j < result[0].length; ++j) {
+				
+				// Establish both row and column vectors from both left and right matrices, respectively.
+				double[] row = getRow(left, j);
+				double[] column = getColumn(right, i);
+				
+				// Perform the operation.
+				result[i][j] = dotProduct(row, column);
+			}
+		}
+		
+		// Return it.
+		return result;
+	}
+	
+	/**
+	 * Return a version of this matrix scaled by a constant (or coefficient).
+	 *
+	 * @param left double[][] matrix of values
+	 * @param coefficient (constant) by which to scale.
+	 * @return the matrix scaled by coefficient
+	 */
+	static double[][] multiplyScalar(double[][] matrix, double coefficient) {
+		
+		// Establish the result matrix.
+		double[][] result = new double[matrix.length][matrix[0].length];
+		
+		for (int i = 0; i < result.length; ++i) {
+			
+			for (int j = 0; j < result[0].length; ++j) {
+				
+				// Perform the operation.
+				result[i][j] = matrix[i][j] * coefficient;
+			}
+		}
+		
+		// Return it.
+		return result;
+	}
+	
+	/**
+	 *	Return a clone (or deep copy) of the input double[][] matrix.
+	 *
+	 *  @return the cloned double[][] matrix
+	 */
+	static double[][] clone(double[][] matrix) {
+		
+		// Establish the clone matrix.
+		double[][] clone = new double[matrix.length][matrix[0].length];
+		
+		for (int i = 0; i < clone.length; ++i) {
+			
+			for (int j = 0; j < clone[0].length; ++j) {
+				
+				// Copy each value.
+				clone[i][j] = matrix[i][j];
+			}
+		}
+		
+		// Return it.
+		return clone;
+	}
+	
+	/**
+	 * Return the i'th row array (vector) of the input double[][] matrix.
+	 *
+	 *  @param matrix the input double[][] matrix
+	 *  @param i an index
+	 *
+	 *  @return the i'th row array of the input matrix
+	 */
+	static double[] getRow(double[][] matrix, int i) {
+		
+		// Establish the row array.
+		double[] row = new double[matrix.length];
+		
+		for (int j = 0; j < row.length; j++) {
+			
+			// Copy each row value.
+			row[j] = matrix[j][i];
+		}
+		
+		// Return the row array.
+		return row;
+	}
+
+	/**
+	 * Return the i'th column array (vector) of the input double[][] matrix.
+	 *
+	 *  @param matrix the input double[][] matrix
+	 *  @param i an index
+	 *
+	 *  @return the i'th column array of the input matrix
+	 */
+	static double[] getColumn(double[][] matrix, int i) {
+		
+		// Return the i'th value.
+		return matrix[i];
+	}
+	
+	/**
+	 * Return the sum of the (left + right) operation.
+	 *
+	 * @param left double[][] vector of values
+	 * @param right	double[][] vector of values
+	 * @return the vector difference (left + right)
+	 */
+	static double[] add(double[] left, double[] right) {
+		
+		if (left.length != right.length) {
+			
+			throw new InvalidCalculationException("Invalid operation: Vectors are not compatible!");
+		}
+		
+		// Establish the result vector.
+		double[] result = new double[left.length];
+		
+		for (int i = 0; i < result.length; ++i) {
+			
+			// Perform the operation.
+			result[i] = left[i] + right[i];
+		}
+		
+		// Return it.
+		return result;
+	}
+	
+	/**
+	 * Return the difference of the (left - right) operation.
+	 *
+	 * @param left double[][] vector of values
+	 * @param right	double[][] vector of values
+	 * @return the vector difference (left - right)
+	 */
+	static double[] subtract(double[] left, double[] right) {
+		
+		if (left.length != right.length) {
+			
+			throw new InvalidCalculationException("Invalid operation: Vectors are not compatible!");
+		}
+		
+		// Establish the result vector.
+		double[] result = new double[left.length];
+		
+		for (int i = 0; i < result.length; ++i) {
+			
+			// Perform the operation.
+			result[i] = left[i] - right[i];
+		}
+		
+		// Return it.
+		return result;
+	}
+		
+	/**
+	 *  Return the dot product of two vectors:
+	 * {left[0]right[0], left[1]right[1], ..., left[n]right[n]}.
+	 *
+	 *  @param left double[][] vector
+	 *  @param right double[][] vector
+	 *  @return the dot product (double value) of the two double[] vectors
+	 */
+	static double dotProduct(double[] left, double[] right) {
+		
+		if (left.length != right.length) {
+			
+			throw new InvalidCalculationException(
+				"Invalid operation: Vector lengths not equal: " +
+				left.length + " =/= " + left.length + ".");
+		}
+		
+		// Establish the product.
+		double product = 0.0;
+		
+		for(int i = 0; i < left.length; ++i) {
+			
+			// Perform the operation.
+			product += left[i] * right[i];
+		}
+		
+		// Return it.
+		return product;
+	}
+	
+	/**
+	 * Return the transpose of the input double[][] matrix.
+	 *
+	 * @param left double[][] matrix of values
+	 * @return a transposed version of the input double[][] matrix
+	 */
+	static double[][] transpose(double[][] matrix) {
+		
+		// Establish the result matrix.
+		double[][] result = new double[matrix[0].length][matrix.length];
+		
+		for (int i = 0; i < result.length; ++i) {
+			
+			for (int j = 0; j < result[0].length; ++j) {
+				
+				// Perform the operation.
+				result[i][j] = matrix[j][i];
+			}
+		}
+		
+		// Return it.
+		return result;
+	}
+	
+	/**
+	 * Log the input double[][] matrix with each value formatted (rounded to 2 significant decimals).
+	 */
+	static void log(double[][] matrix) {
+		
+		/*
+		 * Real numbers are output to 2 decimal places using this DecimalFormat instance.
+		 */
+		DecimalFormat formatter = new DecimalFormat(".00");
+		
+		for (int i = 0; i < matrix.length; ++i) {
+			
+			for(int j = 0; j < matrix[0].length; j++) {
+				
+				// Log the current formatted value.
+				System.out.print((Double.parseDouble(formatter.format(matrix[i][j]))) + "\t");
+			}
+			
+			System.out.print("\n");
+		}
+		
+		System.out.println("");
+	}
+	
+	/**
+	 * Properties.
+	 */
+	static final boolean DEBUG = true;
 	
 	/**
 	 * @param args (arguments passed via command prompt)
 	 */
 	public static void main(String[] args) {
 				
-		// Test.
-		if (true) {
+		// Unit testing.
+		if (DEBUG) {
 			
-			throw new InvalidMatrixCalculationException("Invalid matrix calculation.");
+			System.out.println("---- SMALL:");
+			double[][] SMALL = {
+				
+				{5, -1},
+				{5, 7}
+			};
+			
+			Matrices.log(SMALL);
+			System.out.println("SMALL.length = " + SMALL.length);
+			System.out.println("SMALL[0].length = " + SMALL[0].length);
+			System.out.println();
+			
+			System.out.println("---- MEDIUM:");
+			double[][] MEDIUM = {
+				
+				{4, 4.2, 3.9, 4.3, 4.1},
+				{2, 2.1, 2, 2.1, 2.2},
+				{0.6, 0.59, 0.58, 0.62, 0.63}
+			};
+			
+			Matrices.log(MEDIUM);
+			System.out.println("MEDIUM.length = " + MEDIUM.length);
+			System.out.println("MEDIUM[0].length = " + MEDIUM[0].length);
+			System.out.println();
+			
+			System.out.println("---- LARGE:");
+			double[][] LARGE = {
+				
+				{5.1,4.9,4.7,4.6,5,5.4,4.6,5,4.4,4.9,5.4,4.8,4.8,4.3,5.8,5.7,5.4,5.1,5.7,5.1},
+				{3.5,3,3.2,3.1,3.6,3.9,3.4,3.4,2.9,3.1,3.7,3.4,3,3,4,4.4,3.9,3.5,3.8,3.8},
+				{1.4,1.4,1.3,1.5,1.4,1.7,1.4,1.5,1.4,1.5,1.5,1.6,1.4,1.1,1.2,1.5,1.3,1.4,1.7,1.5},
+				{0.2,0.2,0.2,0.2,0.2,0.4,0.3,0.2,0.2,0.1,0.2,0.2,0.1,0.1,0.2,0.4,0.4,0.3,0.3,0.3}
+			};
+			
+			Matrices.log(LARGE);
+			System.out.println("LARGE.length = " + LARGE.length);
+			System.out.println("LARGE[0].length = " + LARGE[0].length);
+			System.out.println();
 		}
 	}
 }
