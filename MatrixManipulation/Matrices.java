@@ -666,20 +666,7 @@ class Matrices {
 				
 		// Unit testing.
 		if (DEBUG) {
-									
-			// System.out.println("---- MEDIUM:");
-			// double[][] MEDIUM = {
-			//
-			// 	{4, 4.2, 3.9, 4.3, 4.1},
-			// 	{2, 2.1, 2, 2.1, 2.2},
-			// 	{0.6, 0.59, 0.58, 0.62, 0.63}
-			// };
-			//
-			// Matrices.log(MEDIUM);
-			// System.out.println("MEDIUM.length = " + MEDIUM.length);
-			// System.out.println("MEDIUM[0].length = " + MEDIUM[0].length);
-			// System.out.println();
-									
+												
 			/*
 			 * Read from INFILE.
 			 */
