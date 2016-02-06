@@ -20,3 +20,4 @@ To fully understand how [Matrices.java](https://raw.github.com/youldash/NCCC/mas
 | Item | Type | Description |
 |:----:|:----:|:-----------:|
 | `InvalidCalculationException` | class | Utility class. Useful for dealing with `RuntimeException` situations such as invalid Matrix and Vector calculation attempts. |
+| `add()` | method | Two overloading methods: One for summing up two input matrices, and another for summing up two input vectors (i.e. one-dimensional arrays). |
