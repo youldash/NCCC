@@ -639,21 +639,21 @@ class Matrices {
 						fileScanner.close();
 					fileScanner = null;
 				}
-			}			
-		}
-		catch (FileNotFoundException e) {
+			}
+			
+		} catch (FileNotFoundException e) {
 		
 			e.printStackTrace();
-		}
-		catch (EOFException e) {
-		
-			e.printStackTrace();							
-		}
-		catch (StreamCorruptedException e) {
+			
+		} catch (EOFException e) {
 		
 			e.printStackTrace();
-		}
-		catch (IOException e) {
+			
+		} catch (StreamCorruptedException e) {
+		
+			e.printStackTrace();
+			
+		} catch (IOException e) {
 		
 			e.printStackTrace();
 		}
