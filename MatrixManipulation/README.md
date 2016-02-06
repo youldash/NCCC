@@ -2,4 +2,6 @@
 
 ## Fourth Task: Matrix Manipulation
 
-TBA.
+Being written now.
+
+Apologies for the inconvenience :)
