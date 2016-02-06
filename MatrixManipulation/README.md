@@ -27,3 +27,17 @@ To fully understand how [Matrices.java](https://raw.github.com/youldash/NCCC/mas
 | `clone()` | method | Clones (or copies) an input matrix. |
 | `getRow()` | method | Returns a row vector from an input matrix (at a given index). |
 | `getColumn()` | method | Returns a column vector from an input matrix (at a given index). |
+| `dotProduct()` | method | Returns the Dot Product of two input vectors. |
+| `norm()` | method | Computes the norm (or length) of an input vector. |
+| `normalize()` | method | Generates a normalized version of the input vector. |
+| `project()` | method | Returns the projection (or mapping) of the input vector onto the subspace spanned by a projection vector. This method is particularly useful in carrying out [Linear Projection](https://en.wikipedia.org/wiki/Projection_(linear_algebra)) operations. |
+| `transpose()` | method | Generates a transposed version of an input matrix. |
+| `getDiagonalEntries()` | method | Extracts an array of the diagonal entries from an input matrix. |
+| `log()` | method | Prints the formatted contents of an input matrix to screen. |
+| `testAdd()` | method | Useful for testing the addition of matrices. |
+| `testSubtract()` | method | Useful for testing the subtraction of matrices. |
+| `parseData()` | method | Extracts the contents of an input data set  to construct a matrix. |
+
+### Try This
+
+Substitute [MEDIUM.in](https://raw.github.com/youldash/NCCC/master/MatrixManipulation/MEDIUM.in) with other sample data sets, like [LARGE.in](https://raw.github.com/youldash/NCCC/master/MatrixManipulation/SMALL.in), [LARGE.in](https://raw.github.com/youldash/NCCC/master/MatrixManipulation/SMALL.in), and your own.
