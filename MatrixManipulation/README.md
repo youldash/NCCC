@@ -2,6 +2,4 @@
 
 ## Fourth Task: Matrix Manipulation
 
-Being written now.
-
-Apologies for the inconvenience :)
+Here, you are to develop a Java program (using [NetBeans](https://netbeans.org/)) to test the enclosed [Matrices](https://raw.github.com/youldash/NCCC/master/MatrixManipulation/Matrices.java) Java class...
