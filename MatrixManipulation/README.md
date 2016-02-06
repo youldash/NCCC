@@ -13,5 +13,10 @@ By the time you accomplish this task, you should be able to:
 * Demonstrate the effectiveness and usefulness of the Java Math API.
 * Parse data sets using new Java SDK libraries, such as Arrays, Files, Paths and more.
 
-### TBA
+### Operations
 
+To fully understand how [Matrices.java](https://raw.github.com/youldash/NCCC/master/MatrixManipulation/Matrices.java) can be used, take a closer look at the following:
+
+| Item | Type | Description |
+|:----:|:----:|:-----------:|
+| `InvalidCalculationException` | class | Utility class. Useful for dealing with `RuntimeException` situations such as invalid Matrix and Vector calculation attempts. |
