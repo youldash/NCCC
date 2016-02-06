@@ -20,4 +20,10 @@ To fully understand how [Matrices.java](https://raw.github.com/youldash/NCCC/mas
 | Item | Type | Description |
 |:----:|:----:|:-----------:|
 | `InvalidCalculationException` | class | Utility class. Useful for dealing with `RuntimeException` situations such as invalid Matrix and Vector calculation attempts. |
-| `add()` | method | Two overloading methods: One for summing up two input matrices, and another for summing up two input vectors (i.e. one-dimensional arrays). |
+| `add()` | method | Two overloading methods: One for computing the sum of two input matrices, and another for two input vectors (i.e. one-dimensional arrays). |
+| `subtract()` | method | Two overloading methods: One for computing the difference between two input matrices, and another for two input vectors (i.e. one-dimensional arrays). |
+| `multiply()` | method | Useful for computing the product of two input matrices. |
+| `multiplyScalar()` | method | Useful for scaling an input matrix by a factor (or coefficient). |
+| `clone()` | method | Clones (or copies) an input matrix. |
+| `getRow()` | method | Returns a row vector from an input matrix (at a given index). |
+| `getColumn()` | method | Returns a column vector from an input matrix (at a given index). |
