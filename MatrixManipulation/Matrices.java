@@ -33,10 +33,16 @@ import java.lang.String;
 import java.lang.Math;
 import java.text.DecimalFormat;
 import java.util.NoSuchElementException;
+import java.lang.NullPointerException;
 import java.util.Scanner;
 import java.util.Locale;
 import java.util.StringTokenizer;
+import java.util.List;
+import java.util.Arrays;
 import java.io.*;
+import java.nio.charset.Charset;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 
 /**
  * This class is specifically written for performing matrix calculations (or manipulation).
@@ -49,10 +55,8 @@ class Matrices {
 	 * Properties.
 	 */
 	static final boolean DEBUG = true;
-	static final String INFILE = "Matrices.in";
 	
 	static File inFile;
-	static Scanner scanner;
 	
 	/**
 	 * Default constructor.
@@ -262,8 +266,8 @@ class Matrices {
 	/**
 	 * Return the sum of the (left + right) operation.
 	 *
-	 * @param left double[][] vector of values
-	 * @param right	double[][] vector of values
+	 * @param left double[] vector of values
+	 * @param right	double[] vector of values
 	 * @return the vector difference (left + right)
 	 */
 	static double[] add(double[] left, double[] right) {
@@ -289,8 +293,8 @@ class Matrices {
 	/**
 	 * Return the difference of the (left - right) operation.
 	 *
-	 * @param left double[][] vector of values
-	 * @param right	double[][] vector of values
+	 * @param left double[] vector of values
+	 * @param right	double[] vector of values
 	 * @return the vector difference (left - right)
 	 */
 	static double[] subtract(double[] left, double[] right) {
@@ -317,8 +321,8 @@ class Matrices {
 	 *  Return the dot product of two vectors:
 	 * {left[0]right[0], left[1]right[1], ..., left[n]right[n]}.
 	 *
-	 *  @param left double[][] vector
-	 *  @param right double[][] vector
+	 *  @param left double[] vector
+	 *  @param right double[] vector
 	 *  @return the dot product (double value) of the two double[] vectors
 	 */
 	static double dotProduct(double[] left, double[] right) {
@@ -341,6 +345,70 @@ class Matrices {
 		
 		// Return it.
 		return product;
+	}
+	
+	/**
+	 * Compute the norm (or length) of an input double[] vector
+	 * @return ||vector||
+	 */
+	static double norm(double[] vector) {
+		
+		// Return the norm.
+		return Math.sqrt(dotProduct(vector, vector));
+	}
+	
+	/**
+	 * Return the normalized version of the input double[] vector.
+	 * In other words, scale the input vector so that ||vector|| = 1.
+	 *
+	 * @return vector / ||vector||
+	 */
+	static double[] normalize(double[] vector) {
+		
+		// Establish the result matrix.
+		double[] result = new double[vector.length];
+		
+		// Compute the norm.
+		double norm = norm(vector);
+		
+		// Avoid division by 0.
+		if (norm > 0.0) {
+			
+			for (int i = 0; i < result.length; ++i) {
+							
+				// Perform the operation.
+				result[i] = vector[i] / norm;
+			}
+		}
+		
+		// Return it.
+		return result;
+	}
+	
+	/**
+	 * Returns the projection (or mapping) of the input double[] vector
+	 * onto the subspace spanned by the projection double[] vector.
+	 *
+	 * @param vector the vector to be projected
+	 * @param projection the spanning vector of the target subspace
+	 * @return vector[] (projected onto projVector[])
+	 */
+	static double[] project(double[] vector, double[] projVector) {
+		
+		// Compute the Dot Product.
+		double dotProduct = dotProduct(projVector, vector) / dotProduct(projVector, projVector);
+		
+		// Establish the projection vector.
+		double[] projection = new double[vector.length];
+		
+		for (int i = 0; i < projection.length; ++i) {
+			
+			// Compute the i'th value of the new projection vector.
+			projection[i] = projection[i] * dotProduct;
+		}
+		
+		// Return the resulted projection.
+		return projection;
 	}
 	
 	/**
@@ -368,6 +436,27 @@ class Matrices {
 	}
 	
 	/**
+	 * Produce an array of the diagonal entries in the input double[][] matrix.
+	 *
+	 * @param matrix
+	 * @return the entries on the diagonal of the input double[][] matrix
+	 */
+	static double[] getDiagonalEntries(double[][] matrix) {
+		
+		// Establish the result vector.
+		double[] result = new double[matrix.length];
+		
+		for (int i = 0; i < matrix.length; ++i) {
+			
+			// Extract the diagonal.
+			result[i] = matrix[i][i];
+		}
+		
+		// Return it.
+		return result;
+	}
+	
+	/**
 	 * Log the input double[][] matrix with each value formatted (rounded to 2 significant decimals).
 	 */
 	static void log(double[][] matrix) {
@@ -388,7 +477,7 @@ class Matrices {
 			System.out.print("\n");
 		}
 		
-		System.out.println("");
+		// System.out.println("");
 	}
 		
 	/**
@@ -421,22 +510,28 @@ class Matrices {
 		
 		// Passed.
 		return true;
-	}
+	}	
 	
 	/**
-	 * Read form a text file. User input is NOT required.
+	 * Uses the file given by INFILE to construct a matrix.
+	 * All numbers are expected to be space-delimited!
+	 *
+	 * @param fileString the input file name
 	 */
-	static void importData() {
+	static void parseData(String fileString) {
 		
-		System.out.println("---- Matrices.in:");
+		if (DEBUG)
+			System.out.println("---- " + fileString + ":");
+		
 		try {
-		
-			inFile = new File(INFILE);
+				
+			inFile = new File(fileString);
 			FileInputStream fis = new FileInputStream(inFile);
 		
-			scanner = new Scanner(fis);
-			scanner.useLocale(Locale.US);
-		
+			Scanner fileScanner = new Scanner(fis);
+			fileScanner.useLocale(Locale.US);
+			fileScanner.useDelimiter(" ");
+			
 			/*
 			 * Read the data file.
 			 */
@@ -446,26 +541,92 @@ class Matrices {
 					System.out.println("Loading...");
 			
 				try {
-				
-					while (scanner.hasNextLine()) {
-				
-						StringTokenizer tokenizer = new StringTokenizer(scanner.nextLine().trim());
-											
-						while (tokenizer.hasMoreTokens()) {
+					
+					/*
+					 * NOTE: The following code compiles with Java SDK version 1.7 and higher.
+					 */								
+					List lines = Files.readAllLines(
+						Paths.get(fileString), /* Get the path of the input file. */
+						Charset.defaultCharset()); /* Use the default charset. */
+					
+					// Pre-read in the number of rows/columns.
+					int numberOfRows = lines.size();
+					int numberOfColumns = lines.get(0).toString().trim().split("\\s+").length;
+					int row = 0;
+					
+					// Establish the target matrix.
+					double[][] matrix = new double[numberOfRows][numberOfColumns];
+					
+					for (Object line : lines) {
 						
-							System.out.println(Double.parseDouble(tokenizer.nextToken().trim()));
+						// Establish the string tokens.
+						String[] values = line.toString().trim().split("\\s+");
+						
+						// Update the number of columns in this row.
+						numberOfColumns = values.length;
+						
+						for (int column = 0; column < numberOfColumns; ++column) {
+
+							// Assign the new double value to be at matrix[row][column].
+							matrix[row][column] = Double.parseDouble(values[column]);
 						}
-					}					
-				}
-				catch (NoSuchElementException e) {
+												
+						// Move on to the next row in file.
+						++row;
+					}
+					
+					// Log the new matrix.
+					Matrices.log(matrix);
+					System.out.println();
+					
+					/*
+					 * Perform testAdd().
+					 */
+					System.out.println("---- testAdd():");
+					double[][] MEDIUM = {
+
+						{4, 4.2, 3.9, 4.3, 4.1},
+						{2, 2.1, 2, 2.1, 2.2},
+						{0.6, 0.59, 0.58, 0.62, 0.63}
+					};
+											
+					if (Matrices.testAdd(matrix, MEDIUM)) {
+						
+						System.out.println("PASSED.\n");
+						
+					} else
+						System.err.println("FAILED.\n");
+					
+					/*
+					 * Perform testSubtract().
+					 */
+					System.out.println("---- testSubtract():");
+											
+					if (Matrices.testSubtract(matrix, MEDIUM)) {
+						
+						System.out.println("PASSED.\n");
+						
+					} else
+						System.err.println("FAILED.\n");
+					
+					
+				} catch (IOException e) {
+
+					e.printStackTrace();
+					
+				} catch (NoSuchElementException e) {
 				
 					e.printStackTrace();
-				}
-				catch (NumberFormatException e) {
+					
+				} catch (NumberFormatException e) {
 				
 					e.printStackTrace();
-				}
-				finally {
+					
+				} catch (NullPointerException e) {
+				
+					e.printStackTrace();
+					
+				} finally {
 										
 					if (DEBUG)
 						System.out.println("Complete.");
@@ -474,9 +635,9 @@ class Matrices {
 						fis.close();
 					fis = null;
 				
-					if (scanner != null)
-						scanner.close();
-					scanner = null;
+					if (fileScanner != null)
+						fileScanner.close();
+					fileScanner = null;
 				}
 			}			
 		}
@@ -505,70 +666,24 @@ class Matrices {
 				
 		// Unit testing.
 		if (DEBUG) {
-			
-			System.out.println("---- SMALL:");
-			double[][] SMALL = {
-				
-				{5, -1},
-				{5, 7}
-			};
-			
-			Matrices.log(SMALL);
-			System.out.println("SMALL.length = " + SMALL.length);
-			System.out.println("SMALL[0].length = " + SMALL[0].length);
-			System.out.println();
-			
-			System.out.println("---- MEDIUM:");
-			double[][] MEDIUM = {
-				
-				{4, 4.2, 3.9, 4.3, 4.1},
-				{2, 2.1, 2, 2.1, 2.2},
-				{0.6, 0.59, 0.58, 0.62, 0.63}
-			};
-			
-			Matrices.log(MEDIUM);
-			System.out.println("MEDIUM.length = " + MEDIUM.length);
-			System.out.println("MEDIUM[0].length = " + MEDIUM[0].length);
-			System.out.println();
-			
-			System.out.println("---- LARGE:");
-			double[][] LARGE = {
-				
-				{5.1,4.9,4.7,4.6,5,5.4,4.6,5,4.4,4.9,5.4,4.8,4.8,4.3,5.8,5.7,5.4,5.1,5.7,5.1},
-				{3.5,3,3.2,3.1,3.6,3.9,3.4,3.4,2.9,3.1,3.7,3.4,3,3,4,4.4,3.9,3.5,3.8,3.8},
-				{1.4,1.4,1.3,1.5,1.4,1.7,1.4,1.5,1.4,1.5,1.5,1.6,1.4,1.1,1.2,1.5,1.3,1.4,1.7,1.5},
-				{0.2,0.2,0.2,0.2,0.2,0.4,0.3,0.2,0.2,0.1,0.2,0.2,0.1,0.1,0.2,0.4,0.4,0.3,0.3,0.3}
-			};
-			
-			Matrices.log(LARGE);
-			System.out.println("LARGE.length = " + LARGE.length);
-			System.out.println("LARGE[0].length = " + LARGE[0].length);
-			System.out.println();
-			
-			/*
-			 * Test add().
-			 */
-			System.out.println("---- testAdd():");
-			if (Matrices.testAdd(SMALL, SMALL)) {
-				
-				System.out.println("PASSED.");
-			}
-			System.out.println();
-			
-			/*
-			 * Test subtract().
-			 */
-			System.out.println("---- testSubtract():");
-			if (Matrices.testSubtract(SMALL, SMALL)) {
-				
-				System.out.println("PASSED.");
-			}
-			System.out.println();
-			
+									
+			// System.out.println("---- MEDIUM:");
+			// double[][] MEDIUM = {
+			//
+			// 	{4, 4.2, 3.9, 4.3, 4.1},
+			// 	{2, 2.1, 2, 2.1, 2.2},
+			// 	{0.6, 0.59, 0.58, 0.62, 0.63}
+			// };
+			//
+			// Matrices.log(MEDIUM);
+			// System.out.println("MEDIUM.length = " + MEDIUM.length);
+			// System.out.println("MEDIUM[0].length = " + MEDIUM[0].length);
+			// System.out.println();
+									
 			/*
 			 * Read from INFILE.
 			 */
-			Matrices.importData();
+			Matrices.parseData("MEDIUM.in");
 		}
 	}
 }
