@@ -40,4 +40,4 @@ To fully understand how [Matrices.java](https://raw.github.com/youldash/NCCC/mas
 
 ### Try This
 
-Substitute [MEDIUM.in](https://raw.github.com/youldash/NCCC/master/MatrixManipulation/MEDIUM.in) with other sample data sets, like [LARGE.in](https://raw.github.com/youldash/NCCC/master/MatrixManipulation/SMALL.in), [LARGE.in](https://raw.github.com/youldash/NCCC/master/MatrixManipulation/SMALL.in), and your own.
+Substitute [MEDIUM.in](https://raw.github.com/youldash/NCCC/master/MatrixManipulation/MEDIUM.in) with other sample data sets, like [SMALL.in](https://raw.github.com/youldash/NCCC/master/MatrixManipulation/SMALL.in), [LARGE.in](https://raw.github.com/youldash/NCCC/master/MatrixManipulation/LARGE.in), and your own.
