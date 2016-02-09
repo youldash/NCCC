@@ -15,7 +15,7 @@ The general aims are:
 ![Screenshot](https://raw.github.com/youldash/NCCC/master/misc/cIDB3.png)
 [Source](http://i.stack.imgur.com/cIDB3.png)
 
-**An incomplete [solution](https://github.com/youldash/NCCC/blob/master/Clustering/solution/) is now available.**
+**A proposed [solution](https://github.com/youldash/NCCC/tree/master/Clustering/solution/) to the problem is now available.**
 
 ### DataPoint
 
