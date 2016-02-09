@@ -30,14 +30,8 @@
 
 import java.lang.String;
 import java.lang.Math;
-import java.util.List;
 import java.util.Scanner;
-import java.util.Locale;
-import java.util.StringTokenizer;
 import java.io.*;
-import java.nio.charset.Charset;
-import java.nio.file.Files;
-import java.nio.file.Paths;
 
 /**
  * An Amalgamated Artichokes (AA) Solution...
