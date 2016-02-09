@@ -130,7 +130,7 @@ class AA {
 			/*
 			 * Loop through the range of prices as determined by (n) i.e. 1 ≤ k ≤ n.
 			 */
-	        for (int k = 1; k <= n; ++k) {
+			for (int k = 1; k <= n; ++k) {
 				
 				// Compute the current price.
 				double price = AA.price(p, a, b, c, d, k);
