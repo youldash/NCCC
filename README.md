@@ -18,7 +18,7 @@ The general aims are:
 * To make implementations more robust through mechanisms such as Exception
 Handling in Java.
 
-**A proposed [solution](https://github.com/youldash/NCCC/blob/master/solution/) will be posted later, for reference.**
+**An incomplete [solution](https://github.com/youldash/NCCC/blob/master/solution/) is now available.**
 
 ## First Task
 

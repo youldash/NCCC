@@ -15,6 +15,8 @@ The general aims are:
 ![Screenshot](https://raw.github.com/youldash/NCCC/master/misc/cIDB3.png)
 [Source](http://i.stack.imgur.com/cIDB3.png)
 
+**An incomplete [solution](https://github.com/youldash/NCCC/blob/master/Clustering/solution/) is now available.**
+
 ### DataPoint
 
 A [DataPoint](https://en.wikipedia.org/wiki/Data_point), in statistical terms, refers to a set of one or more measurements on a single member of a statistical population or grouping. It it [also be referred to](http://whatis.techtarget.com/definition/data-point) as is a discrete unit of information (that could be mapped and displayed using a system of geometry).
