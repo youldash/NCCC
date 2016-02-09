@@ -67,7 +67,7 @@ class Matrices {
 	 * An Exception class.
 	 * Thrown when an invalid matrix manipulation (operation) is ever attempted.
 	 */
-	private static class InvalidCalculationException extends RuntimeException {
+	static class InvalidCalculationException extends RuntimeException {
 		
 		/**
 		 * Default constructor.
