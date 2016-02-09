@@ -1,7 +1,5 @@
 # Amalgamated Artichokes
 
-## Outline
-
 You are to write a Java program (using [NetBeans](https://netbeans.org/)) to determine the largest price decline over a given sequence of prices.
 
 A complete specification to this challenge is presented [here](https://open.kattis.com/problems/artichoke).
