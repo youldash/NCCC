@@ -156,7 +156,7 @@ class AA {
 			// Resolve the output to 0.00 if resolvedPrice is determined 0.0.
 			if (resolvedPrice == Double.MIN_VALUE) {
 				
-				System.out.println("0.00");
+				System.out.printf("%.2f\n", 0.0);
 			
 			} else { // Display the output.
 				
