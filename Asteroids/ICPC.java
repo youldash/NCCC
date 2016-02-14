@@ -518,6 +518,9 @@ class ICPC {
 			double oldDistance = 0.0;
 			double currentDistance = p0.centroid.distance(p1.centroid);
 			
+			// Overlap flag.
+			boolean overlap = false;
+			
 			// Iterate (t) till 5.0 seconds.
 			while (t <= 5.0) {
 				
@@ -535,7 +538,7 @@ class ICPC {
 				
 				// Compute the delta.
 				double delta = currentDistance - oldDistance;
-							
+						
 				if (delta >= 0.0) { /* Collision occurred. */
 				
 					log(p0.centroid.toString());
@@ -543,9 +546,15 @@ class ICPC {
 			
 					log("Time of intersection = " + t + " (" + String.format("%g", delta) + ")");
 					
+					overlap = true;
+					
 					break;
 				}
 			}
+			
+			// No overlap so far.
+			if (!overlap)
+				log("never");
 					
 		} catch (Exception e) {
 		
