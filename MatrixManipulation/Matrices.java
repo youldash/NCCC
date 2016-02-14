@@ -206,7 +206,7 @@ class Matrices {
 	/**
 	 *	Return a clone (or deep copy) of the input double[][] matrix.
 	 *
-	 *  @return the cloned double[][] matrix
+	 * @return the cloned double[][] matrix
 	 */
 	static double[][] clone(double[][] matrix) {
 		
@@ -229,10 +229,10 @@ class Matrices {
 	/**
 	 * Return the i'th row array (vector) of the input double[][] matrix.
 	 *
-	 *  @param matrix the input double[][] matrix
-	 *  @param i an index
+	 * @param matrix the input double[][] matrix
+	 * @param i an index
 	 *
-	 *  @return the i'th row array of the input matrix
+	 * @return the i'th row array of the input matrix
 	 */
 	static double[] getRow(double[][] matrix, int i) {
 		
@@ -252,10 +252,10 @@ class Matrices {
 	/**
 	 * Return the i'th column array (vector) of the input double[][] matrix.
 	 *
-	 *  @param matrix the input double[][] matrix
-	 *  @param i an index
+	 * @param matrix the input double[][] matrix
+	 * @param i an index
 	 *
-	 *  @return the i'th column array of the input matrix
+	 * @return the i'th column array of the input matrix
 	 */
 	static double[] getColumn(double[][] matrix, int i) {
 		
@@ -268,7 +268,7 @@ class Matrices {
 	 *
 	 * @param left double[] vector of values
 	 * @param right	double[] vector of values
-	 * @return the vector difference (left + right)
+	 * @return the vector sum (left + right)
 	 */
 	static double[] add(double[] left, double[] right) {
 		
@@ -318,12 +318,12 @@ class Matrices {
 	}
 		
 	/**
-	 *  Return the dot product of two vectors:
+	 * Return the dot product of two vectors:
 	 * {left[0]right[0], left[1]right[1], ..., left[n]right[n]}.
 	 *
-	 *  @param left double[] vector
-	 *  @param right double[] vector
-	 *  @return the dot product (double value) of the two double[] vectors
+	 * @param left double[] vector
+	 * @param right double[] vector
+	 * @return the dot product (double value) of the two double[] vectors
 	 */
 	static double dotProduct(double[] left, double[] right) {
 		
@@ -337,7 +337,7 @@ class Matrices {
 		// Establish the product.
 		double product = 0.0;
 		
-		for(int i = 0; i < left.length; ++i) {
+		for (int i = 0; i < left.length; ++i) {
 			
 			// Perform the operation.
 			product += left[i] * right[i];
@@ -348,7 +348,7 @@ class Matrices {
 	}
 	
 	/**
-	 * Compute the norm (or length) of an input double[] vector
+	 * Compute the norm of an input double[] vector
 	 * @return ||vector||
 	 */
 	static double norm(double[] vector) {
@@ -468,7 +468,7 @@ class Matrices {
 		
 		for (int i = 0; i < matrix.length; ++i) {
 			
-			for(int j = 0; j < matrix[0].length; j++) {
+			for (int j = 0; j < matrix[0].length; j++) {
 				
 				// Log the current formatted value.
 				System.out.print((Double.parseDouble(formatter.format(matrix[i][j]))) + "\t");

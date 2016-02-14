@@ -431,6 +431,7 @@ class ClusteringAlgorithm {
 				// Calculate the new Euclidean Distance for each DataPoint instance in the Cluster reference.
 			    getCluster().getDataPoint(i).calculateEuclideanDistance();
 			}
+			
 			// Recalculate SumOfSquares for the Cluster reference.
 			getCluster().calculateSumOfSquares();
 		}
@@ -701,7 +702,7 @@ class ClusteringAlgorithm {
 	}
 	
 	/**
-	 *  Sets the starting (Initial) Centroid (x, y) coordinates - start of step 1.
+	 *  Sets the starting (initial) Centroid (x, y) coordinates - start of step 1.
 	 */
 	private void initializeCentroids() {
 		
