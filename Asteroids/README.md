@@ -10,9 +10,38 @@ Please note that **this is NOT the best and only solution**. As such, you may wi
 
 ## Points of Improvement
 
-### Line Intersection
+### Line/Edge Intersection
 
-Try improving the solution by considering the following code snippet:
+A good starting point would be to consider the following pseudocode:
+
+```
+Compute the bounding boxes of both polygons, p0 and p1;
+
+If the two bounding boxes overlap {
+	
+	for each edge in p0 {
+		
+		for each edge in p1 {
+			
+			if the two edges intersect {
+				
+				// Both p0 and p1 intersect
+				return true;
+			}
+		}
+	}
+	
+	// No overlap at this stage.
+	return false;
+	
+} else {
+	
+	// Both bounding boxes don't intersect.
+	return false;
+}
+```
+
+An early implementation of edge intersection looks like the following:
 
 ``` Java
 /**
@@ -46,4 +75,17 @@ public Vertex intersection(Edge edge) {
 		((x3 - x4) * (x1 * y2 - y1 * x2) - (x1 - x2) * (x3 * y4 - y3 * x4)) / derivation,
 		((y3 - y4) * (x1 * y2 - y1 * x2) - (y1 - y2) * (x3 * y4 - y3 * x4)) / derivation);
 }
+```
+
+Try improving the [existing code](https://raw.github.com/youldash/NCCC/master/Asteroids/ICPC.java) to 
+
+### Area of a Polygon
+
+Try improving the solution by utilizing the area calculation method:
+
+``` Java
+/**
+ * Compute/recompute the area of this polygon.
+ */
+private void calculateArea() {}
 ```
