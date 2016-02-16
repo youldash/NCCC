@@ -348,7 +348,56 @@ class Matrices {
 	}
 	
 	/**
-	 * Compute the norm of an input double[] vector
+	 * Return the cross product of two vectors:
+	 * {left[0]right[0], left[1]right[1], ..., left[n]right[n]}.
+	 *
+	 * @param left double[] vector
+	 * @param right double[] vector
+	 * @return the cross product (double value) of the two double[] vectors
+	 */
+	static vector crossProduct(double[] left, double[] right) {
+		
+		if (left.length != right.length) {
+			
+			throw new InvalidCalculationException(
+				"Invalid operation: Vector lengths not equal: " +
+				left.length + " =/= " + left.length + ".");
+		}
+		
+		// Establish the result vector.
+		double[] result = new double[left.length];
+		
+		/*
+		 * *************************************************
+		 * **NOTE** Assuming we are working with 2D vectors.
+		 * *************************************************
+		 */
+		
+		// Return it.
+		return (left[0] * right[1]) - (left[1] * right[0]);
+	}
+	
+	/**
+	 * Compute the length of an input double[] vector.
+	 * @return |vector|
+	 */
+	static double length(double[] vector) {
+		
+		// Establish the result.
+		double result = 0.0;
+		
+		for (int i = 0; i < left.length; ++i) {
+			
+			// Accumulate the length.
+			result += Math.pow(vector[i], 2.0);
+		}
+		
+		// Return it.
+		return Math.pow(result);
+	}
+	
+	/**
+	 * Compute the norm of an input double[] vector.
 	 * @return ||vector||
 	 */
 	static double norm(double[] vector) {
