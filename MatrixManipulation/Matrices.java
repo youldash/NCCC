@@ -355,30 +355,32 @@ class Matrices {
 	 * @param right double[] vector
 	 * @return the cross product (double value) of the two double[] vectors
 	 */
-	static vector crossProduct(double[] left, double[] right) {
-		
-		if (left.length != right.length) {
-			
-			throw new InvalidCalculationException(
-				"Invalid operation: Vector lengths not equal: " +
-				left.length + " =/= " + left.length + ".");
-		}
-		
-		// Establish the result vector.
-		double[] result = new double[left.length];
-		
-		/*
-		 * *************************************************
-		 * **NOTE** Assuming we are working with 2D vectors.
-		 * *************************************************
-		 */
-		
-		// Return it.
-		return (left[0] * right[1]) - (left[1] * right[0]);
-	}
+	// static vector crossProduct(double[] left, double[] right) {
+	//
+	// 	if (left.length != right.length) {
+	//
+	// 		throw new InvalidCalculationException(
+	// 			"Invalid operation: Vector lengths not equal: " +
+	// 			left.length + " =/= " + left.length + ".");
+	// 	}
+	//
+	// 	// Establish the result vector.
+	// 	double[] result = new double[left.length];
+	//
+	// 	/*
+	// 	 * *************************************************
+	// 	 * **NOTE** Assuming we are working with 2D vectors.
+	// 	 * *************************************************
+	// 	 */
+	//
+	// 	// Return it.
+	// 	return (left[0] * right[1]) - (left[1] * right[0]);
+	// }
 	
 	/**
 	 * Compute the length of an input double[] vector.
+	 *
+	 * @param input double[] vector
 	 * @return |vector|
 	 */
 	static double length(double[] vector) {
@@ -386,18 +388,20 @@ class Matrices {
 		// Establish the result.
 		double result = 0.0;
 		
-		for (int i = 0; i < left.length; ++i) {
+		for (int i = 0; i < vector.length; ++i) {
 			
 			// Accumulate the length.
 			result += Math.pow(vector[i], 2.0);
 		}
 		
 		// Return it.
-		return Math.pow(result);
+		return Math.pow(result, 2.0);
 	}
 	
 	/**
 	 * Compute the norm of an input double[] vector.
+	 *
+	 * @param input double[] vector
 	 * @return ||vector||
 	 */
 	static double norm(double[] vector) {
@@ -410,6 +414,7 @@ class Matrices {
 	 * Return the normalized version of the input double[] vector.
 	 * In other words, scale the input vector so that ||vector|| = 1.
 	 *
+	 * @param input double[] vector
 	 * @return vector / ||vector||
 	 */
 	static double[] normalize(double[] vector) {
@@ -432,6 +437,38 @@ class Matrices {
 		
 		// Return it.
 		return result;
+	}
+	
+	/**
+	 * Return the angle (theta) of the input double[] vector (in degrees).
+	 *
+	 * @param input double[] vector
+	 * @return angle (in degrees)
+	 */
+	static double getAngle(double[] vector) {
+		
+		// Extract the 2D coordinates from the input vector.\
+		double x = vector[0];
+		double y = vector[1];
+		
+		// Return it.
+		return Math.atan2(x, y);
+	}
+	
+	/**
+	 * Set the angle (theta) of the input double[] vector (in degrees).
+	 *
+	 * @param input double[] vector
+	 * @param angle
+	 */
+	static void setAngle(double angle, double[] vector) {
+		
+		// Get the length of the input vector.
+		double length = length(vector);
+		
+		// Update the 2D coordinates based on the angle.
+		vector[0] = Math.cos(angle) * length;
+		vector[1] = Math.sin(angle) * length;
 	}
 	
 	/**
