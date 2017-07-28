@@ -94,8 +94,7 @@ Venus
 * Line 1 is the "type" of the celestial object (in this instance, a Planet).
 * Line 2 is the "name" of the planet (hint: may be more than one word).
 * Line 3 is the "radius" of the planet (in kilometers).
-* Line 4 is the "mass" of the planet (in kilometers). This attribute contains the <b>mantissa</b> (a real
-number or double), and <b>exponent</b> (an integer) of the planet's mass expressed in scientific notation. See the following description for Venus:
+* Line 4 is the "mass" of the planet (in kilometers). This attribute contains the <b>mantissa</b> (a real number or double), and <b>exponent</b> (an integer) of the planet's mass expressed in scientific notation. See the following description for Venus:
 
 | Name | Mass | Description |
 |:----:|:----:|:----:|
@@ -128,8 +127,7 @@ Jupiter
 |:----:|:----:|:----:|
 | Europa | 4.80 22 | For the moon Europa, its mass is 4.80 x 10^22kg |
 
-* Line 5 is the "name" of the planet that the moon orbits (in other words, the moon is a satellite of this
-planet).
+* Line 5 is the "name" of the planet that the moon orbits (in other words, the moon is a satellite of this planet).
 * Line 6 is the "temperature" of the moon in degrees Kelvin (stored as an integer).
 
 <hr>
